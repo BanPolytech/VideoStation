@@ -117,9 +117,9 @@ class APIPlaylist {
 
             try {
                 // name = req.body.playlist.name;
-                // userID = req.body.token.id;
+                userID = req.body.token.id;
                 name = req.body.name;
-                userID = req.body.id;
+                // userID = req.body.id;
 
 
                 //if (!name || !userID) throw "";

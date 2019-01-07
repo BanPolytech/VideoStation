@@ -45,7 +45,7 @@
             PlaylistService.LoadAll()
 			.then(response => {
 				console.log(response);
-				$scope.playlists = response;
+				$scope.playlists = response.playlists;
 				load_function($scope.playlists[0].id);
 			})
 			.catch(error => {
@@ -63,6 +63,7 @@
             PlaylistService.New($scope.newplaylist)
 			.then(response => {
 				console.log(response);
+				$scope.playlists.push(response.playlist);
 			})
 			.catch(error => {
 				console.log(error);

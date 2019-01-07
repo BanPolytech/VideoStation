@@ -22,6 +22,7 @@
 
 				var vids_vimeo = response.videos[0].data;
 				vids_vimeo.forEach(function (element) {
+
 					let id = element.uri.replace("videos", "video");
 					element.link = $sce.trustAsResourceUrl("https://player.vimeo.com" + id);
 				});
