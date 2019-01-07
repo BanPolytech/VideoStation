@@ -1,0 +1,62 @@
+<div class="form-container">
+    <h2>Admin</h2>
+
+    <div ng-show="error" class="alert alert-danger">{{error}}</div>
+    <div ng-show="success" class="alert alert-success">{{success}}</div>
+
+    <hr/>
+
+    <h3>
+        Create a user :
+    </h3>
+
+    <form ng-submit="create()" id="create-form">
+        <table>
+            <tr>
+                <td>
+                    <input name="mail_create" placeholder="mail" type="text" ng-model="mail_create">
+                </td>
+                <td>
+                    <input name="pwd_create" placeholder="password" type="text" ng-model="pwd_create">
+                </td>
+                <td>
+                    <input name="admin_create" id="admin_create" type="checkbox" ng-model="admin_create">
+                    <label for="admin_create">&ensp;admin&ensp;</label>
+                </td>
+                <td>
+                    <input name="enabled_create" id="enabled_create" type="checkbox" ng-model="enabled_create">
+                    <label for="enabled_create">&ensp;enabled&ensp;</label>
+                </td>
+                <td>
+                    <button id="create-button" class="push_button" type="submit"><span>Create</span></button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br/><hr/>
+    <h3>List :</h3>
+
+    <form ng-submit="search()" id="search-form admin-search">
+        <div id="search-box">
+            <input id="searchtext" name="q" placeholder="Which user are you searching for ? Empty == All" type="text" ng-model="searchtext">
+            <button id="search-button" type="submit"><span>Search</span></button>
+        </div>
+    </form>
+
+    <table id="table_users">
+        <tr ng-repeat="user in users">
+            <td>{{user.id}}</td>
+            <td>{{user.mail}}</td>
+            <td>
+                {{user.admin}}&nbsp;
+                &ensp;<button class="push_button" ng-class="{toggle_on: user.admin, toggle_off: !user.admin}" ng-click="toggle_admin(!user.admin, user.id)">toggle</button>
+            </td>
+            <td>
+                {{user.enabled}}&nbsp;
+                &ensp;<button class="push_button" ng-class="{toggle_on: user.enabled, toggle_off: !user.enabled}" ng-click="toggle_enabled(!user.enabled, user.id)">toggle</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

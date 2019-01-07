@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+	<title>Routing</title>
+	<meta http-equiv="Content-Type" content="text/html; charset-utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<script src="js/jquery.min.js"></script>
+  	<script src="js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="rootingApp">
+
+        <div class="container">
+
+                <nav class="navbar navbar-inverse" ng-controller="NavCtrl">
+                        <div class="container-fluid">
+                          <div class="navbar-header">
+                            <a class="navbar-brand" href="#">WebSiteName</a>
+                          </div>
+                          <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#!/page1">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!/page2">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!/page3">Page 3</a>
+                                </li>
+                          </ul>
+                        </div>
+                </nav>
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                            <div ng-view></div>
+
+                    </div>
+                </div>
+            </div>
+    
+    
+
+    
+    
+	<script src="js/angular.min.js"></script>
+    <script src="js/angular.route.min.js"></script>
+    <script src="js/routing.js"></script>
+
+</body>
+</html>

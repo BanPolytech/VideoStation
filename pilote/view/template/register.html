@@ -1,0 +1,26 @@
+<div class="form-container">
+    <h2>Register</h2>
+    <div ng-show="error" class="alert alert-danger" >{{error}}</div>
+    <form ng-submit="register()">
+        <!--<div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" value="" required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" value="" required />
+        </div>-->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" value="" required ng-model="username"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required ng-model="pwd"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+            <a href="/#!/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

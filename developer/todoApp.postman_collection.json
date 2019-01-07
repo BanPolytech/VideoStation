@@ -1,0 +1,765 @@
+{
+	"info": {
+		"name": "todoApp",
+		"_postman_id": "efd3e49d-0baa-6489-89e2-70d2942983a3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pilote",
+			"item": [
+				{
+					"name": "/user/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jon.snow@email.com\",\n    \"password\": \"winterfell\"\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}/register",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jon.snow@email.com\",\n    \"password\": \"winterfell\"\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}/login",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/verify",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}/verify",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{user.baseAPI}}",
+							"path": [
+								"verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}/all?",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}",
+							"path": [
+								"all"
+							],
+							"query": [
+								{
+									"key": "isDone",
+									"value": "false",
+									"equals": true,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}/get?idList=5a60df6a1cb72f9c7f61ae69",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}",
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "idList",
+									"value": "5a60df6a1cb72f9c7f61ae69",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\": {\n    \t\"name\": \"Groceries\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}/add",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\" : {\n    \t\"id\":\"xxxxxxxxxxxxx\",\n    \t\"name\": \"newNameOfList\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}/update",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"list\" : {\n    \t\"id\":\"xxxxxxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}/delete",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{list.baseAPI}}",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n    \t\"idList\": \"xxxxxxxxxxxx\",\n    \t\"isDone\": false\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}/all?idList=5a60df6a1cb72f9c7f61ae69",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}",
+							"path": [
+								"all"
+							],
+							"query": [
+								{
+									"key": "isDone",
+									"value": "false",
+									"equals": true,
+									"disabled": true
+								},
+								{
+									"key": "idList",
+									"value": "5a60df6a1cb72f9c7f61ae69",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\": {\n    \t\"idList\": \"xxxxxxxxx\",\n    \t\"name\": \"Apple\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}/add",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\" : {\n    \t\"id\":\"xxxxxxxx\",\n    \t\"name\": \"Milk\",\n    \t\"isDone\": true\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}/update",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task\" : {\n    \t\"id\":\"xxxxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{pilote.host}}:{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}/delete",
+							"protocol": "https",
+							"host": [
+								"{{pilote.host}}"
+							],
+							"port": "{{pilote.port}}{{pilote.baseAPI}}{{task.baseAPI}}",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/user/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jon.snow@email.com\",\n    \"password\": \"winterfell\"\n}"
+						},
+						"url": {
+							"raw": "http://{{user.host}}:{{user.port}}{{user.baseAPI}}/register",
+							"protocol": "http",
+							"host": [
+								"{{user.host}}"
+							],
+							"port": "{{user.port}}{{user.baseAPI}}",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/user/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jon.snow@email.com\",\n    \"password\": \"winterfell\"\n}"
+						},
+						"url": {
+							"raw": "http://{{user.host}}:{{user.port}}{{user.baseAPI}}/login",
+							"protocol": "http",
+							"host": [
+								"{{user.host}}"
+							],
+							"port": "{{user.port}}{{user.baseAPI}}",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "/task/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxxx\"\n    },\n    \"task\": {\n    \t\"idList\": \"xxxxxxx\",\n    \t\"isDone\": false\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{task.baseAPI}}/all",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{task.baseAPI}}",
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxx\"\n    },\n    \"task\": {\n    \t\"idList\": \"xxxxx\",\n    \t\"name\": \"new Task\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{task.baseAPI}}/add",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{task.baseAPI}}",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhMGVhOWQ2NTU4OWJhNzM4MDZhY2M2NCIsImlhdCI6MTUxMDkyMzg4MiwiZXhwIjoxNTExMDEwMjgyfQ.UKP4Z3DBmiv0txbA6jnx_oXRyQELmLLtETTiwmDc2SM"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"5a0ea9d65589ba73806acc64\"\n    },\n    \"task\" : {\n    \t\"id\":\"5a4c0ebfa5268b2a2f138463\",\n    \t\"name\": \"newTaskFromPost\",\n    \t\"idList\": \"5a4914949bf2aedc979a4dd3\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{task.baseAPI}}/update",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{task.baseAPI}}",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/task/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxx\"\n    },\n    \"task\" : {\n    \t\"id\":\"xxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{task.baseAPI}}/delete",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{task.baseAPI}}",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{list.baseAPI}}/all",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{list.baseAPI}}",
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{list.baseAPI}}/get?token={\"id\":\"5a60d0854dec2c8596eacbf6\"}&idList=5a60df6a1cb72f9c7f61ae69",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{list.baseAPI}}",
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{\"id\":\"5a60d0854dec2c8596eacbf6\"}",
+									"equals": true
+								},
+								{
+									"key": "idList",
+									"value": "5a60df6a1cb72f9c7f61ae69",
+									"equals": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxxxxx\"\n    },\n    \"list\": {\n    \t\"name\": \"new List\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{list.baseAPI}}/add",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{list.baseAPI}}",
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/update",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxx\"\n    },\n    \"list\" : {\n    \t\"id\":\"xxxx\",\n    \t\"name\": \"updated Name\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{list.baseAPI}}/update",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{list.baseAPI}}",
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/list/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": {\n    \t\"id\": \"xxxxxx\"\n    },\n    \"list\" : {\n    \t\"id\":\"xxxxxxx\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://{{task.host}}:{{task.port}}{{list.baseAPI}}/delete",
+							"protocol": "http",
+							"host": [
+								"{{task.host}}"
+							],
+							"port": "{{task.port}}{{list.baseAPI}}",
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

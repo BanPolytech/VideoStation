@@ -1,0 +1,27 @@
+Home||search (même page):
+
+/search (String slug, int token.id)
+
+
+user:
+
+/user/register (String email, String password)
+/user/login (String email, String password)
+
+admin:
+
+/admin/create (String email, String password)
+/admin/disable (int token.id))
+/admin/search (String text)
+/admin/setadmin (boolean admin, int token.id)
+
+history:
+
+/history/get (int token.id)
+
+playlists:
+
+/playlists/all (int token.id)
+/playlists/load (int idPlaylist, int token.id)
+/playlists/add (String name, int token.id)
+

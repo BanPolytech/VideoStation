@@ -1,0 +1,17 @@
+files:
+  - app.module.js
+  - factory/access.factory.js
+  - factory/api.factory.js
+  - factory/user.factory.js
+  - factory/main_service.js
+  - factory/history_service.js
+  - factory/playlist_service.js
+  - factory/admin_service.js
+  - controller/main.js
+  - controller/login.js
+  - controller/register.js
+  - controller/history.js
+  - controller/playlists.js
+  - controller/admin.js
+  - app.config.js
+  - app.run.js

@@ -1,0 +1,19 @@
+.history_block{
+	background:#F2F2F2;
+	margin-bottom:50px;
+	margin-top:50px;
+}
+
+.history_block iframe{
+	float:none;
+}
+
+.history_text{
+	border-bottom:1px solid grey;
+	cursor:pointer;
+	padding:10px;
+}
+
+.history_text:hover{
+	background:#E4E4E4;
+}

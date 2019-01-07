@@ -1,0 +1,14 @@
+<div class="header-limiter">
+
+	<h1><a href="#">Video<span>Station</span></a></h1>
+
+	<nav>
+		<a href="#!/" ng-class="{selected: activeTab === 'home'}">Home</a>
+		<a href="#!/login" ng-class="{selected: activeTab === 'login'}" ng-show="!logged">Log in</a>
+		<a href="#!/register" ng-class="{selected: activeTab === 'register'}" ng-show="!logged">Register</a>
+		<!--<a href="#!/account" ng-class="{selected: activeTab === 'account'}" ng-show="logged">Account</a>-->
+		<a href="#!/login" ng-show="logged">Logout</a>
+		<a href="#!/history" ng-class="{selected: activeTab === 'history'}">History</a>
+		<a href="#!/playlists" ng-class="{selected: activeTab === 'playlists'}">Playlists</a>
+	</nav>
+</div>

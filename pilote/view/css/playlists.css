@@ -1,0 +1,82 @@
+#affichage_playlists{
+	margin-left:0;
+	margin-top:20px;
+	width:75%;
+}
+
+#menu_playlist{
+	position:absolute;
+	top:30px;
+	right:0;
+	width:20%;
+	background:#F2F2F2;
+	box-shadow: 2px 2px 0 0 rgba(0,0,0,0.2);
+	-ms-border-radius: 4px 4px 4px 4px;
+	-o-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.playlist_list{
+	border-bottom:1px solid grey;
+	padding:7px;
+	cursor:pointer;
+}
+
+.playlist_list:hover{
+	background:#E4E4E4;
+}
+
+.playlist_selected{
+	background:#dadada;
+}
+
+#newplaylist-box {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 40px;
+    border: 1px solid #999;
+    background-color: #fff;
+    overflow: hidden;
+	-ms-border-radius: 0 4px 0 0;
+	-o-border-radius:  0 4px 0 0;
+	-moz-border-radius:  0 4px 0 0;
+	-webkit-border-radius:  0 4px 0 0;
+	border-radius:  0 4px 0 0;
+}
+
+#newplaylist-box input[type="text"] {
+    width: 100%;
+    padding: 11px 0 12px 1em;
+    color: #333;
+    outline: none;
+}
+
+#newplaylist-text {
+    font-size: 14px;
+    color: #ddd;
+    border-width: 0;
+    background: transparent;
+}
+
+#newplaylist-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 42px;
+    width: 70px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    border-width: 0;
+    background-color: #4d90fe;
+    cursor: pointer;
+	-ms-border-radius: 0 4px 0 0;
+	-o-border-radius:  0 4px 0 0;
+	-moz-border-radius:  0 4px 0 0;
+	-webkit-border-radius:  0 4px 0 0;
+	border-radius:  0 4px 0 0;
+}

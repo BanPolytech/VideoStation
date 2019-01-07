@@ -1,0 +1,27 @@
+<div>
+	<form ng-submit="search()" id="search-form">
+		<div id="search-box">
+			<input id="searchtext" name="q" placeholder="What are you searching for ?" type="text" ng-model="searchtext">
+			<button id="search-button" type="submit"><span>Search</span></button>
+		</div>
+
+		<!--<div id="options_search">
+			<input type="checkbox" id="youtube" name="youtube"
+			   value="youtube" checked ng-model="youtube"/>
+			<label for="youtube">YouTube</label>&emsp;&emsp;
+			<input type="checkbox" id="vimeo" name="vimeo"
+			   value="vimeo" checked ng-model="vimeo"/>
+			<label for="vimeo">Vimeo</label>
+		</div>-->
+	</form>
+
+	<div id="videos_liste_home">
+		<div ng-repeat="vimeo in vimeos">
+			<iframe ng-src="{{vimeo.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+		</div>
+		<div ng-repeat="youtube in youtubes">
+			<iframe ng-src="{{youtube.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+		</div>
+	</div>
+</div>
+

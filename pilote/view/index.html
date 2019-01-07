@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/header-basic-light.css">
+	<link rel="stylesheet" href="css/login_register.css">
+	<link rel="stylesheet" href="css/playlists.css">
+	<link rel="stylesheet" href="css/history.css">
+      <link rel="stylesheet" href="css/admin.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+	 <!-- <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>-->
+	<link rel="stylesheet" type="text/css" href="css/account.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="todoApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header class="header-basic-light" ng-include="'template/includes/header.html'">                    
+	</header>
+
+    <div class="container">
+    <ng-view></ng-view>
+    </div>
+
+    
+    <footer ng-include="'template/includes/footer.html'">                    
+	</footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js.min" type="text/javascript" charset="utf-8"></script>
+        <!-- endbuild -->
+</body>
+</html>

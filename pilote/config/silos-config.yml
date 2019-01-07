@@ -1,0 +1,26 @@
+silo:
+  user:
+    host: 'localhost'
+    port: 8081
+    endpoints:
+      user: 'user'
+  search:
+    host: 'localhost'
+    port: 8083
+    endpoints:
+      search: 'search'
+  history:
+    host: 'localhost'
+    port: 8084
+    endpoints:
+      history: 'history'
+  playlists:
+    host: 'localhost'
+    port: 8083
+    endpoints:
+      playlists: 'playlists'
+  admin:
+    host: 'localhost'
+    port: 8081
+    endpoints:
+      admin: 'user'

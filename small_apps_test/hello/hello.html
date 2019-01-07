@@ -1,0 +1,28 @@
+<doctype html>
+<html ng-app="helloApp">
+	<head>
+		<title>Hello World</title>
+		<meta http-equiv="Content-Type" content="text/html; charset-utf-8">
+	</head>
+
+	<body>
+		<div ng-controller="helloCtrl">
+			<h2>Hello {{ name }}!</h2>
+			<h2>Hello <span ng-bind="name"></span>!</h2>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+
+		<script>
+			
+		var helloApp = angular.module('helloApp', []);
+
+		helloApp.controller('helloCtrl', ['$scope', function($scope) {
+
+			$scope.name = "ZERHTYFGHD";
+
+		}]);
+
+		</script>
+	</body>
+</html>
