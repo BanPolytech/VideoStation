@@ -57,6 +57,7 @@
             AdminService.Toggle_admin(admin, id)
                 .then(response => {
                     $scope.success = "Opération résussie.";
+                    $scope.search();
                 })
                 .catch(error => {
                     $scope.error = error;
@@ -69,7 +70,8 @@
         $scope.toggle_enabled = function toggle_enabled(enabled, id) {
             AdminService.Toggle_enabled(enabled, id)
                 .then(response => {
-                    $scope.success = "Opération résussie.";
+                    $scope.success = "Opération réussie.";
+                    $scope.search();
                 })
                 .catch(error => {
                     $scope.error = error;

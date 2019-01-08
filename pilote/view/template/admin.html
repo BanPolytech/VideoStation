@@ -50,11 +50,11 @@
             <td>{{user.email}}</td>
             <td>
                 {{user.admin}}&nbsp;
-                &ensp;<button class="push_button" ng-class="{toggle_on: user.admin, toggle_off: !user.admin}" ng-click="toggle_admin(user.admin, user._id)">toggle</button>
+                <button class="push_button" ng-class="{toggle_on: user.admin, toggle_off: !user.admin}" ng-click="toggle_admin(user.admin, user._id)">toggle</button>
             </td>
             <td>
                 {{user.suspend}}&nbsp;
-                &ensp;<button class="push_button" ng-class="{toggle_on: user.enabled, toggle_off: !user.enabled}" ng-click="toggle_enabled(user.enabled, user._id)">toggle</button>
+                <button class="push_button" ng-class="{toggle_on: user.suspend, toggle_off: !user.suspend}" ng-click="toggle_enabled(user.suspend, user._id)">toggle</button>
             </td>
         </tr>
     </table>

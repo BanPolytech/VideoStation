@@ -78,7 +78,7 @@
 
         function Toggle_enabled(enabled, id) {
             return appAPI.post(makeEndpoint('disable'), {
-                disable : !enabled,
+                disable : enabled,
                 id : id
             })
             .then(response => {

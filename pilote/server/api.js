@@ -242,7 +242,8 @@ class API {
                         "setadmin"
                     ),
                     {
-                        admin : req.body.admin,
+                        admin: req.body.admin,
+                        id: req.body.id,
                         token: req.body.token
                     }
                 )

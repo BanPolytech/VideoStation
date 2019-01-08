@@ -14,8 +14,10 @@ class ApiAdmin {
 		router.post("/create", (req, res) => {
 
 			// get params
-			var email = req.body.email;
-			var password = req.body.password;
+			var email = req.body.mail;
+			var password = req.body.pwd;
+			var enabled = req.body.enabled;
+			var admin = req.body.admin;
 
 			// check params
 			if (!email || !password) {
@@ -82,9 +84,6 @@ class ApiAdmin {
 			var disable = req.body.disable;
 			var userID = req.body.id;
 
-			console.log(userID);
-			console.log(disable);
-
 			var database = new Database();
 			var admin;
 
@@ -110,9 +109,38 @@ class ApiAdmin {
 				});
 
 		});
+
 		router.post("/setadmin", (req, res) => {
 
+			// get params
+			var toggle = req.body.admin;
+			var userID = req.body.id;
+
+			var database = new Database();
+			var admin;
+
+			database
+				.connectDB()
+				.then(db => {
+					return db.collection("users");
+				})
+				.then(usersCollection => {
+					admin = new Admin(usersCollection);
+					return admin.toggleAdmin(userID, toggle);
+				})
+				.then(userAdminChange => {
+					console.log("NEW ADMIN VALUE OF USER : " + userAdminChange.toString());
+					res.send(this.makeSuccess(`User admin changes`));
+				})
+				.catch(err => {
+					console.log(err);
+					res.send(this.makeError(err.message));
+				})
+				.then(function() {
+					database.closeDB();
+				});
 		});
+
 		router.get("/search", (req, res) => {
 
 			//GET PARAMS
@@ -149,6 +177,7 @@ class ApiAdmin {
 				});
 
 		});
+
 		router.get("/list", (req, res) => {
 
 

@@ -24,7 +24,27 @@ class Admin {
           myQuery,
           { $set: { suspend: toSuspend}},
           { returnOriginal: false}
-          );
+      );
+  }
+
+  toggleAdmin(userId, isAdmin) {
+      const that = this;
+      var toAdmin = 0;
+
+      if (!ObjectID.isValid(userId)) {
+          return Promise.reject(new Error("INVALID_USER_ID_FORMAT"));
+      }
+
+      toAdmin = (isAdmin)?0:1;
+
+      var myQuery = {
+          _id: new ObjectID(userId)
+      };
+      return that.collection.findOneAndUpdate(
+          myQuery,
+          { $set: { admin: toAdmin}},
+          { returnOriginal: false}
+      );
   }
 
   getAllUsers() {
