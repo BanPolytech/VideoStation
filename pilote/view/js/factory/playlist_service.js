@@ -17,8 +17,23 @@
         service.Load = Load;
         service.New = New;
         service.LoadAll = LoadAll;
+        service.Add = Add;
 
         return service;
+
+        function Add(v_link, id_p) {
+            return appAPI.get(makeEndpoint('add'), {
+                v_link: v_link,
+                id_p: id_p
+            })
+            .then(response => {
+                return response;
+            })
+            .catch(error => {
+                console.log(`playlists error: ${error}`);
+                return Promise.reject(error);
+            });
+        }
 
         function Load(id_p) {
             return appAPI.get(makeEndpoint('load'), {
