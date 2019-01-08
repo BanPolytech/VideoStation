@@ -20,6 +20,11 @@ class Admin {
       return that.collection.findOneAndUpdate(myQuery, { $set: { suspend: isSuspend}}, {returnOriginal: false});
   }
 
+  getAllUsers() {
+      const that = this;
+      return that.collection.find().toArray();
+  }
+
 }
 
 module.exports = Admin;

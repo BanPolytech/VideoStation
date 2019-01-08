@@ -23,4 +23,4 @@ silo:
     host: 'localhost'
     port: 8081
     endpoints:
-      admin: 'user'
+      admin: 'admin'

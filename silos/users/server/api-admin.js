@@ -119,6 +119,33 @@ class ApiAdmin {
 		router.get("/search", (req, res) => {
 
 		});
+		router.get("/list", (req, res) => {
+
+
+			var database = new Database();
+			var users;
+
+			database
+				.connectDB()
+				.then(db => {
+					return db.collection("users");
+				})
+				.then(usersCollection => {
+					users = new Admin(usersCollection);
+					return users.getAllUsers();
+				})
+				.then(allUsers => {
+					console.log("GET ALL USERS");
+					return res.send(that.makeSuccess({ users: allUsers }));
+				})
+				.catch(err => {
+					console.log(err);
+					res.send(this.makeError(err.message));
+				})
+				.then(function() {
+					database.closeDB();
+				});
+		});
 
 	}
 	

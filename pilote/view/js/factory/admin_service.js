@@ -34,6 +34,17 @@
             });
         }
 
+        function List() {
+            return appAPI.get(makeEndpoint('list'))
+                .then(response => {
+                    return response;
+                })
+                .catch(error => {
+                    console.log(`admin error: ${error}`);
+                    return Promise.reject(error);
+                });
+        }
+
         function Create(mail, pwd, enabled, admin) {
             return appAPI.post(makeEndpoint('create'), {
                 mail : mail,

@@ -277,6 +277,31 @@ class API {
                     res.send(that.makeError(error.message));
                 });
         });
+
+        //admin
+        this.router.post(`/${silosConfig.admin.endpoints.admin}/list`, (req, res) => {
+            var that = this;
+
+            axios
+                .get(
+                    that.makeFullEndpoint(
+                        silosConfig.admin,
+                        silosConfig.admin.endpoints.admin,
+                        "list"
+                    ),
+                    {
+                        params: {
+                            token: req.body.token
+                        }
+                    }
+                )
+                .then(function(response) {
+                    res.json(response.data);
+                })
+                .catch(function(error) {
+                    res.send(that.makeError(error.message));
+                });
+        });
 		
 		/*this.router.get(`/${silosConfig.task.endpoints.task}/all`, (req, res) => {
 			var that = this;

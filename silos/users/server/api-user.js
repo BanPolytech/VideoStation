@@ -135,7 +135,10 @@ class ApiUser {
 				if (userFound.suspend) {
 					return Promise.reject(new Error("USER_SUSPENDED"));
 				}
-				res.send(that.makeSuccess({ id: userFound._id }));
+				res.send(that.makeSuccess(
+					{ id: userFound._id,
+							admin: userFound.admin
+					}));
 			})
 			.catch(err => {
 				console.log(err);

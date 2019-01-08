@@ -26,6 +26,19 @@
                 });
         };
 
+        $scope.list = function list() {
+            AdminService.List()
+                .then(response => {
+                    $scope.users = response;
+                })
+                .catch(error => {
+                    $scope.error = error;
+                })
+                .then(function() {
+                    $scope.$apply();
+                });
+        };
+
         $scope.create = function create() {
             AdminService.Create($scope.mail_create, $scope.pwd_create, $scope.enabled_create, $scope.admin_create)
                 .then(response => {
