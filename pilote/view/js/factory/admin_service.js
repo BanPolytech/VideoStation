@@ -15,6 +15,7 @@
         var service = {};
 
         service.Search = Search;
+        service.List = List;
         service.Create = Create;
         service.Toggle_admin = Toggle_admin;
         service.Toggle_enabled = Toggle_enabled;

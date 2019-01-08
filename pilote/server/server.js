@@ -58,11 +58,17 @@ class Server {
 			);
 		});
 		
-		// authorize access to public directory to server html, css, js
+		// authorize access to public directory to server html, css, js, imgs
 		this.server.use(
 			"/js",
 			express.static(
 				path.join(process.cwd(), `${config.serverConfig.server.public.js}`)
+			)
+		);
+		this.server.use(
+			"/imgs",
+			express.static(
+				path.join(process.cwd(), `${config.serverConfig.server.public.imgs}`)
 			)
 		);
 		this.server.use(

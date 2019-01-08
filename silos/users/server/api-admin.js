@@ -118,6 +118,45 @@ class ApiAdmin {
 		});
 		router.get("/search", (req, res) => {
 
+			//GET PARAMS
+			var query = req.query.searchtext;
+			var userID = JSON.parse(req.query.token).id;
+
+			// check params
+			if (!query || !userID) {
+				res.send(this.makeError("MISSING_PARAMS"));
+			}
+
+			var database = new Database();
+			var user;
+
+			database
+				.connectDB()
+				.then(db => {
+					return db.collection("users");
+				})
+				.then(usersCollection => {
+					user = new User(usersCollection);
+					return user.findUserById(userID)
+				})
+				.then(userFound => {
+					if (!userFound) {
+						return Promise.reject(new Error("USER_NOT_FOUND"));
+					}
+					return admin.suspendUser(userFound._id, suspend);
+				})
+				.then(userSuspendChange => {
+					console.log("NEW SUSPEND VALUE OF USER : " + userSuspendChange.toString());
+					res.send(this.makeSuccess(`User suspend changes`));
+				})
+				.catch(err => {
+					console.log(err);
+					res.send(this.makeError(err.message));
+				})
+				.then(function() {
+					database.closeDB();
+				});
+
 		});
 		router.get("/list", (req, res) => {
 
