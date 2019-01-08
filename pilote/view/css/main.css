@@ -86,11 +86,38 @@ button, hr, input {
 	margin-top:10px;
 }
 
-#videos_liste_home{
+#videos_liste_home, #banners_search{
 	margin-left:15%;
+    width:70%;
 }
 
 .videos_frames{
 	float:left;
 	margin:25px 4% 25px 0;
+}
+
+#liste_vimeo{
+    padding-left:6%;
+    width:50%;
+    float:left;
+    border-right:1px solid grey;
+}
+
+#liste_youtube{
+    padding-left:6%;
+    width:50%;
+    float:right;
+}
+
+#vimeo_banner{
+    width:50%;
+    height:100px;
+    background:#49b4e9;
+}
+
+#youtube_banner{
+    width:50%;
+    height:100px;
+    background:#425263;
+    float:right;
 }
