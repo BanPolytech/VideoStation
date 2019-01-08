@@ -15,6 +15,13 @@
 		</div>-->
 	</form>
 	
+	<div id="playlists_main" ng-show="show_playlist">
+		<div ng-repeat="p in playlists" ng-click="add_in_playlist(p.id)" class="liste_playlist_main">
+			{{p.name}}
+		</div>
+		<button ng-click="hide_playlist()" style="background:grey;color:white;">Cancel</button>
+	</div>
+	
 	<br/>
 	<br/>
 	<div id="banners_search">
@@ -24,10 +31,16 @@
 
 	<div id="videos_liste_home">
 		<div id="liste_vimeo">
-			<iframe ng-repeat="vimeo in vimeos" ng-src="{{vimeo.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+			<div ng-repeat="vimeo in vimeos" class="iframes_englober">
+				<iframe ng-src="{{vimeo.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+				<button class="add_playlist" ng-click="actual_video(vimeo.link)">add</button>
+			</div>
 		</div>
 		<div id="liste_youtube">
-			<iframe ng-repeat="youtube in youtubes" ng-src="{{youtube.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+			<div ng-repeat="youtube in youtubes" class="iframes_englober">
+				<iframe ng-src="{{youtube.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+				<button class="add_playlist" ng-click="actual_video(youtube.link)">add</button>
+			</div>
 		</div>
 	</div>
 </div>
