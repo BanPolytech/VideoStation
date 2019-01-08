@@ -23,6 +23,7 @@ server:
   public:
     root: 'view'
     js: 'view/js'
+    imgs: 'view/imgs'
     css: 'view/css'
     template: 'view/template'
   minifier:
