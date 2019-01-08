@@ -33,6 +33,7 @@
 			$rootScope.$on('$routeChangeStart', function (event, toState, toParams, fromState, fromParams) {
 				$rootScope.activeTab = toState.data.activeTab;
 				$rootScope.logged = UserFactory.isLogged;
+                		$rootScope.admin = UserFactory.isAdmin;
 			});
 		}
 		
