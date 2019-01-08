@@ -14,13 +14,20 @@
 			<label for="vimeo">Vimeo</label>
 		</div>-->
 	</form>
+	
+	<br/>
+	<br/>
+	<div id="banners_search">
+		<img src="imgs/vimeo_banner.png" id="vimeo_banner"/>
+		<img src="imgs/youtube_banner.png" id="youtube_banner"/>
+	</div>
 
 	<div id="videos_liste_home">
-		<div ng-repeat="vimeo in vimeos">
-			<iframe ng-src="{{vimeo.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+		<div id="liste_vimeo">
+			<iframe ng-repeat="vimeo in vimeos" ng-src="{{vimeo.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
 		</div>
-		<div ng-repeat="youtube in youtubes">
-			<iframe ng-src="{{youtube.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+		<div id="liste_youtube">
+			<iframe ng-repeat="youtube in youtubes" ng-src="{{youtube.link}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
 		</div>
 	</div>
 </div>
