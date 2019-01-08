@@ -46,14 +46,14 @@
 
     <table id="table_users">
         <tr ng-repeat="user in users">
-            <td>{{user.id}}</td>
-            <td>{{user.mail}}</td>
+            <td>{{user._id}}</td>
+            <td>{{user.email}}</td>
             <td>
                 {{user.admin}}&nbsp;
                 &ensp;<button class="push_button" ng-class="{toggle_on: user.admin, toggle_off: !user.admin}" ng-click="toggle_admin(!user.admin, user.id)">toggle</button>
             </td>
             <td>
-                {{user.enabled}}&nbsp;
+                {{user.suspend}}&nbsp;
                 &ensp;<button class="push_button" ng-class="{toggle_on: user.enabled, toggle_off: !user.enabled}" ng-click="toggle_enabled(!user.enabled, user.id)">toggle</button>
             </td>
         </tr>

@@ -16,7 +16,8 @@
         $scope.search = function search() {
             AdminService.Search($scope.searchtext)
                 .then(response => {
-                    $scope.users = response;
+                    console.log(response);
+                    $scope.users = response.users;
                 })
                 .catch(error => {
                     $scope.error = error;

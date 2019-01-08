@@ -4,7 +4,7 @@ const check = require("check-types");
 
 const config = require(`${process.cwd()}/config/config`);
 const Database = require("./db");
-// const Admin = require("./models/admin");
+const Admin = require("./models/admin");
 const User = require("./models/user");
 
 const router = express.Router();
@@ -128,7 +128,7 @@ class ApiAdmin {
 			}
 
 			var database = new Database();
-			var user;
+			var users;
 
 			database
 				.connectDB()
@@ -136,18 +136,12 @@ class ApiAdmin {
 					return db.collection("users");
 				})
 				.then(usersCollection => {
-					user = new User(usersCollection);
-					return user.findUserById(userID)
+					users = new Admin(usersCollection);
+					return users.searchUser(query)
 				})
-				.then(userFound => {
-					if (!userFound) {
-						return Promise.reject(new Error("USER_NOT_FOUND"));
-					}
-					return admin.suspendUser(userFound._id, suspend);
-				})
-				.then(userSuspendChange => {
-					console.log("NEW SUSPEND VALUE OF USER : " + userSuspendChange.toString());
-					res.send(this.makeSuccess(`User suspend changes`));
+				.then(usersFound => {
+					console.log("FOUND " + usersFound.length + " results : \n" + usersFound.toString());
+					res.send(this.makeSuccess({users: usersFound}))
 				})
 				.catch(err => {
 					console.log(err);

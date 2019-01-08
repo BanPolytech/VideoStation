@@ -17,12 +17,23 @@ class Admin {
       var myQuery = {
           _id: new ObjectID(userId)
       };
-      return that.collection.findOneAndUpdate(myQuery, { $set: { suspend: isSuspend}}, {returnOriginal: false});
+      return that.collection.findOneAndUpdate(
+          myQuery,
+          { $set: { suspend: isSuspend}},
+          {returnOriginal: false}
+          );
   }
 
   getAllUsers() {
       const that = this;
       return that.collection.find().toArray();
+  }
+
+  searchUser(query) {
+      const that = this;
+      return that.collection.find(
+          { "email" : { $regex: query}}
+      ).toArray();
   }
 
 }
