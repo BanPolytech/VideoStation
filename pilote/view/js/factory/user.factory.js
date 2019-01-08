@@ -3,9 +3,9 @@
 	
 	todoApp.factory("UserFactory", UserFactory);
 	
-	UserFactory.$inject = ["appAPI"];
+	UserFactory.$inject = ["appAPI", "$rootScope"];
 	
-	function UserFactory(appAPI) {
+	function UserFactory(appAPI, $rootScope) {
 		
 		const apiEndpoint = "user/";
 		var loggedState = false;
@@ -63,8 +63,11 @@
 		}
 		
 		function logout() {
+			console.log("logout");
 			appAPI.setToken(null);
 			loggedState = false;
+			adminState = false;
+           		 $rootScope.admin = false;
 		}
 		
 		function verify() {

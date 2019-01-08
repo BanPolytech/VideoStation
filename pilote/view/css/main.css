@@ -92,8 +92,7 @@ button, hr, input {
 }
 
 .videos_frames{
-	float:left;
-	margin:25px 4% 25px 0;
+	margin:25px 4% 0 0;
 }
 
 #liste_vimeo{
@@ -120,4 +119,37 @@ button, hr, input {
     height:100px;
     background:#425263;
     float:right;
+}
+
+.iframes_englober{
+    width:100%;
+}
+
+#playlists_main{
+    position:fixed;
+    padding:6px;
+    border:1px solid grey;
+    background:white;
+    color:black;
+    left:50%;
+    margin-left:-150px;
+    top:50px;
+    width:300px;
+    min-height:100px;
+}
+
+.liste_playlist_main{
+    border-bottom:1px solid grey;
+    padding:4px;
+    cursor:pointer;
+}
+
+.liste_playlist_main:hover{
+    background:#425263;
+}
+
+.add_playlist{
+    cursor:pointer;
+    width:80%;
+    background-image: linear-gradient(red, yellow);
 }
