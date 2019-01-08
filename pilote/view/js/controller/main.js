@@ -3,12 +3,56 @@
 	
 	todoApp.controller("videosHomeCtrl", videosHomeCtrl);
 	
-	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce"];
+	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce", "PlaylistService"];
 	
-	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce) {
+	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce, PlaylistService) {
 		const vm = this;
 		
 		$scope.videos = null;
+		$scope.playlists = null;
+		$scope.show_playlist = false;
+        	$scope.video_to_add = "";
+		
+		function loadAll(){
+            PlaylistService.LoadAll()
+                .then(response => {
+                    console.log(response);
+                    $scope.playlists = response;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .then(function() {
+                    $scope.$apply();
+                });
+        }
+
+        loadAll();
+
+        $scope.hide_playlist = function hide_playlist(){
+            $scope.show_playlist = false;
+		};
+
+        $scope.actual_video = function actual_video(v){
+        	$scope.video_to_add = v;
+        	$scope.show_playlist = true;
+		};
+
+		$scope.add_in_playlist = function add_in_playlist(id_p){
+            $scope.show_playlist = false;
+            if($scope.video_to_add != ""){
+                PlaylistService.Add($scope.video_to_add, id_p)
+                    .then(response => {
+                        $scope.playlists = response.playlists;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+                    .then(function() {
+                        $scope.$apply();
+                    });
+			}
+		};
 				
 		$scope.search = function search() {
 			$location.path("/search/"+$scope.searchtext);
