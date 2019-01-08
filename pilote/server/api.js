@@ -154,7 +154,7 @@ class API {
         });
 
         // playlists
-        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/add`, (req, res) => {
+        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/new`, (req, res) => {
             var that = this;
 
             axios
@@ -162,7 +162,7 @@ class API {
                     that.makeFullEndpoint(
                         silosConfig.playlists,
                         silosConfig.playlists.endpoints.playlists,
-                        "add"
+                        "new"
                     ),
                     {
                         name: req.body.name,
@@ -258,6 +258,8 @@ class API {
         this.router.post(`/${silosConfig.admin.endpoints.admin}/disable`, (req, res) => {
             var that = this;
 
+            console.log(req.body.id);
+
             axios
                 .post(
                     that.makeFullEndpoint(
@@ -267,6 +269,7 @@ class API {
                     ),
                     {
                         disable: req.body.disable,
+                        id: req.body.id,
                         token: req.body.token
                     }
                 )

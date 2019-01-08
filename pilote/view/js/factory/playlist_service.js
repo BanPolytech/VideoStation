@@ -34,7 +34,7 @@
         }
 
         function New(p_name) {
-            return appAPI.post(makeEndpoint('add'), {
+            return appAPI.post(makeEndpoint('new'), {
                 name: p_name
             })
             .then(response => {

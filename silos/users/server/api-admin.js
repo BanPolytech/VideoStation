@@ -79,11 +79,14 @@ class ApiAdmin {
 		router.post("/disable", (req, res) => {
 
 			// get params
-			var suspend = req.body.suspend;
-			var userID = JSON.parse(req.query.token).id;
+			var disable = req.body.disable;
+			var userID = req.body.id;
+
+			console.log(userID);
+			console.log(disable);
 
 			var database = new Database();
-			var user;
+			var admin;
 
 			database
 				.connectDB()
@@ -91,14 +94,8 @@ class ApiAdmin {
 					return db.collection("users");
 				})
 				.then(usersCollection => {
-					user = new User(usersCollection);
-					return user.findUserById(userID)
-				})
-				.then(userFound => {
-					if (!userFound) {
-						return Promise.reject(new Error("USER_NOT_FOUND"));
-					}
-					return admin.suspendUser(userFound._id, suspend);
+					admin = new Admin(usersCollection);
+					return admin.toggleSuspend(userID, disable);
 				})
 				.then(userSuspendChange => {
 					console.log("NEW SUSPEND VALUE OF USER : " + userSuspendChange.toString());

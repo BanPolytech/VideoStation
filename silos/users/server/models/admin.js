@@ -7,20 +7,23 @@ class Admin {
     that.collection = collection;
   }
 
-  suspendUser(userId, isSuspend) {
+  toggleSuspend(userId, isSuspend) {
       const that = this;
+      var toSuspend = 0;
 
       if (!ObjectID.isValid(userId)) {
           return Promise.reject(new Error("INVALID_USER_ID_FORMAT"));
       }
+
+      toSuspend = (isSuspend)?0:1;
 
       var myQuery = {
           _id: new ObjectID(userId)
       };
       return that.collection.findOneAndUpdate(
           myQuery,
-          { $set: { suspend: isSuspend}},
-          {returnOriginal: false}
+          { $set: { suspend: toSuspend}},
+          { returnOriginal: false}
           );
   }
 

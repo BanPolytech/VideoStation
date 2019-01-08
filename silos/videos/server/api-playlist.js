@@ -109,7 +109,7 @@ class APIPlaylist {
                 });
         });
 
-        router.post("/add", (req, res) => {
+        router.post("/new", (req, res) => {
             var that = this;
 
             //get param
