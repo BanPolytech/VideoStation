@@ -1,5 +1,5 @@
 var searchYT = require('youtube-search');
-const apiKeyYoutube = 'AIzaSyDA0I4h7wQfi1MINta2ScVMBVy3D4JwDwc';
+const apiKeyYoutube = 'AIzaSyBA7fF9qF4zXZLX5tYFCHCFLcvQg8CDO_k';
 const YouTubeAPI  = require("simple-youtube-api");
 const youtubeAPI = new YouTubeAPI(apiKeyYoutube);
 

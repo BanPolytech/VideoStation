@@ -6,10 +6,14 @@
     PlaylistService.$inject = ["$sce", "appAPI"];
 
     function PlaylistService($sce, appAPI) {
-        const apiEndpoint = "playlists/";
+        const apiPlaylistEndpoint = "playlists/";
+        const apiVideoEndpoint = "search/";
 
-        function makeEndpoint(method) {
-            return `${apiEndpoint}${method}`;
+        function makePlaylistEndpoint(method) {
+            return `${apiPlaylistEndpoint}${method}`;
+        }
+        function makeVideoEndpoint(method) {
+            return `${apiVideoEndpoint}${method}`;
         }
 
         var service = {};
@@ -21,9 +25,9 @@
 
         return service;
 
-        function Add(v_link, id_p) {
-            return appAPI.post(makeEndpoint('add'), {
-                v_link: v_link,
+        function Add(v_obj, id_p) {
+            return appAPI.post(makeVideoEndpoint('add'), {
+                v_obj: v_obj,
                 id_p: id_p
             })
             .then(response => {
@@ -36,7 +40,7 @@
         }
 
         function Load(id_p) {
-            return appAPI.get(makeEndpoint('load'), {
+            return appAPI.get(makePlaylistEndpoint('load'), {
                 id: id_p
             })
             .then(response => {
@@ -49,7 +53,7 @@
         }
 
         function New(p_name) {
-            return appAPI.post(makeEndpoint('new'), {
+            return appAPI.post(makePlaylistEndpoint('new'), {
                 name: p_name
             })
             .then(response => {
@@ -62,7 +66,7 @@
         }
 
         function LoadAll() {
-            return appAPI.get(makeEndpoint('all'), {})
+            return appAPI.get(makeVideoEndpoint('all'), {})
             .then(response => {
                 return response;
             })

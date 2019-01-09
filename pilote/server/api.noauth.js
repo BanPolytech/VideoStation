@@ -17,9 +17,7 @@ class APINoAuth {
 		// global brute force, on all routes
 		this.router.use(this.globalBruteforce.prevent);
 		
-		this.router.post(
-			`/${silosConfig.user.endpoints.user}/register`,
-			(req, res) => {
+		this.router.post(`/${silosConfig.user.endpoints.user}/register`, (req, res) => {
 				var that = this;
 				
 				axios
@@ -40,8 +38,7 @@ class APINoAuth {
 				.catch(function(error) {
 					res.send(that.makeError(error.message));
 				});
-			}
-		);
+			});
 		
 		this.router.post(
 			`/${silosConfig.user.endpoints.user}/login`,
@@ -88,9 +85,7 @@ class APINoAuth {
 			}
 		);
 		
-		this.router.post(
-			`/${silosConfig.user.endpoints.user}/verify`,
-			(req, res) => {
+		this.router.post(`/${silosConfig.user.endpoints.user}/verify`, (req, res) => {
 				var that = this;
 				
 				var token = req.body.token || req.query.token || req.headers["x-access-token"];
@@ -110,12 +105,9 @@ class APINoAuth {
 					return res.send(that.makeError("BAD_TOKEN"));
 				});
 				
-			}
-		);
+			});
 
-        this.router.get(
-            `/${silosConfig.search.endpoints.search}/search`,
-            (req, res) => {
+        this.router.get(`/${silosConfig.search.endpoints.search}/search`, (req, res) => {
                 var that = this;
 
                 //le token n'est pas nécessaire mais utile pour historique on le vérifie donc s'il est là
@@ -193,8 +185,7 @@ class APINoAuth {
                     {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/txWmd7QKFe8")},
                     {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/4CTGxKIzD7M")},
                     {"link":$sce.trustAsResourceUrl("https://player.vimeo.com/video/305558448")}]);*/
-            }
-        );
+            });
 	}
 	
 	makeFullEndpoint(silo, name, endpoint) {

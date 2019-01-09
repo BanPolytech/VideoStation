@@ -41,7 +41,7 @@
 
 		$scope.add_in_playlist = function add_in_playlist(id_p){
             $scope.hide_playlist();
-            if($scope.video_to_add !== ""){
+            if($scope.video_to_add !== null){
                 PlaylistService.Add($scope.video_to_add, id_p)
                     .then(response => {
                         // $scope.playlists = response.playlists;

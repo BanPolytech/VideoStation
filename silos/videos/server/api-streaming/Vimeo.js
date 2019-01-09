@@ -1,5 +1,5 @@
 const VimeoAPI =  require("vimeo").Vimeo;
-const vimeoAPI = new VimeoAPI("b0eeb1d44872154f78413a1f37fef36352f420b3", "uGlHQnd6C8pu0NMgAcjm8ybsVphMJSgIMaQdZfObCQhHTxwvKWfeRrT5pI7n7B4V04pRgmXTk0EVDZDPs/6CI02sTvC+74ANj7mkCtCVHQ/bH3VKOUp8xxTvns9vMbu/", "bed141a559e19f691ed6e67f720a4f3a");
+const vimeoAPI = new VimeoAPI("d00792f08bd7e4866b9b611e7f86a4004c9ca3df", "N1fiJX9OD4wIWJYmkHj4VXUn+BmEWHI4Z1hWZ14+rhX7UZhgfMVmRGuKTAo9x58KSIaPi1gDyus/gSnLasqaiqhyIsqLIr8pdhOWKn3SrLHyXOTgTNqvh+ErrfDIFh+V", "95d1e9f38ad1750f5a7dafcc4e679be8");
 
 
 

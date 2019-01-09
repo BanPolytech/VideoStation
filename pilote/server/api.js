@@ -100,6 +100,32 @@ class API {
                 });
         });
 
+        // video
+        this.router.post(`/${silosConfig.search.endpoints.search}/add`), (req, res) => {
+
+            var that = this;
+            var v_obj = req.body.v_obj;
+
+            axios
+                .post(
+                    that.makeFullEndpoint(
+                        silosConfig.search,
+                        silosConfig.search.endpoints.search,
+                        "add"
+                    ),
+                    {
+                        query: req.body.query,
+                        token: req.body.token
+                    }
+                )
+                .then(function(response) {
+                    res.json(response.data);
+                })
+                .catch(function(error) {
+                    res.send(that.makeError(error.message));
+                });
+        };
+
         // playlists
         this.router.get(`/${silosConfig.playlists.endpoints.playlists}/all`, (req, res) => {
             var that = this;
