@@ -7,6 +7,17 @@ class Admin {
     that.collection = collection;
   }
 
+  createUser(email, passwordHashed, enabled, admin) {
+      const that = this;
+      return that.collection.insertOne(
+          {
+              email: sanitize(email),
+              password: passwordHashed,
+              suspend: enabled,
+              admin: admin,
+          });
+  }
+
   toggleSuspend(userId, isSuspend) {
       const that = this;
       var toSuspend = 0;

@@ -11,19 +11,6 @@
         $scope.playlists = null;
         $scope.selected_playlist = 0;
 
-        /*$scope.videos = [
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/x7HSKglzrOA")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/AX3Bsiq-13k")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/KR5CtMLuiqQ")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/viqEzmUOWBM")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/txWmd7QKFe8")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/x7HSKglzrOA")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/AX3Bsiq-13k")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/KR5CtMLuiqQ")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/viqEzmUOWBM")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/txWmd7QKFe8")},
-		{"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/4CTGxKIzD7M")}];*/
-
         //
         var load_function = function load(idp){
         	$scope.selected_playlist = idp;
@@ -58,7 +45,6 @@
 
         loadAll();
 
-        //
         $scope.newPlaylist = function newPlaylist(){
             PlaylistService.New($scope.newplaylist)
 			.then(response => {

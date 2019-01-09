@@ -4,11 +4,14 @@
     <list default="true" id="87643659-e9df-45ff-ba1d-de4cdaff7069" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pilote/server/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/server/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pilote/view/js/controller/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/js/controller/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pilote/view/js/factory/admin_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/js/factory/admin_service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pilote/view/template/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/template/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilote/view/js/controller/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/js/controller/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilote/view/js/controller/playlists.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/js/controller/playlists.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pilote/view/template/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/pilote/view/template/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/silos/users/server/api-admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/silos/users/server/api-admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/silos/users/server/models/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/silos/users/server/models/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silos/videos/server/api-playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/silos/videos/server/api-playlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/silos/videos/server/models/playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/silos/videos/server/models/playlist.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,61 +27,33 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/view/js/app.module.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/silos/users/server/models/user.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="231">
-                  <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/silos/users/server/models/admin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="626">
-                  <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/silos/users/server/api-admin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="389">
-                  <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
-                  <folding>
-                    <element signature="e#392#1993#0" />
-                    <element signature="e#2994#3000#0" />
-                    <element signature="e#3039#3048#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pilote/view/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-358" />
+                <state relative-caret-position="645">
+                  <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+                </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/silos/videos/server/api-playlist.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="241">
-                  <caret line="171" selection-start-line="171" selection-end-line="171" />
+                <state relative-caret-position="177">
+                  <caret line="190" column="32" lean-forward="true" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="32" />
                   <folding>
                     <element signature="e#313#1540#0" />
                     <element signature="e#1585#3598#0" />
-                    <element signature="e#3644#5464#0" />
-                    <element signature="e#5513#7660#0" />
                     <element signature="e#7709#10525#0" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pilote/view/template/main.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="582">
+                  <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -87,49 +62,23 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pilote/server/api.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="803">
-                  <caret line="245" column="40" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
+                <state relative-caret-position="57">
+                  <caret line="180" selection-start-line="180" selection-end-line="180" />
                   <folding>
                     <element signature="e#1447#1827#0" />
                     <element signature="e#1938#2608#0" />
                     <element signature="e#2724#3457#0" />
                     <element signature="e#3574#4310#0" />
-                    <element signature="e#5208#5947#0" />
-                    <element signature="e#6055#6865#0" />
-                    <element signature="e#7754#8426#0" />
-                    <element signature="e#8542#9214#0" />
-                    <element signature="e#8434#12282#0" />
+                    <element signature="e#4427#5101#0" />
+                    <element signature="e#6043#6782#0" />
+                    <element signature="e#6890#7700#0" />
+                    <element signature="e#7810#8520#0" />
+                    <element signature="e#8629#9381#0" />
+                    <element signature="e#9486#10167#0" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/admin_service.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="80" column="34" lean-forward="true" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/admin.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="448">
-                  <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/view/template/admin.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
-                  <caret line="55" column="38" lean-forward="true" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
@@ -137,8 +86,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="329">
-                  <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+                <state relative-caret-position="126">
+                  <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -146,8 +95,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/playlists.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="65" column="55" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+                <state relative-caret-position="690">
+                  <caret line="46" selection-start-line="46" selection-end-line="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/main_service.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="360">
+                  <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/main.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="331">
+                  <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -165,15 +132,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/api.factory.js">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pilote/config/silos-config.yml">
+            <entry file="file://$PROJECT_DIR$/silos/videos/server/models/playlist.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+                <state relative-caret-position="188">
+                  <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -203,7 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/silos/playlist/server/api.playlist.js" />
         <option value="$PROJECT_DIR$/silos/playlist/server/server.js" />
         <option value="$PROJECT_DIR$/silos/recherche/server/api.video.js" />
         <option value="$PROJECT_DIR$/silos/tasks/server/api.task.js" />
@@ -238,22 +199,23 @@
         <option value="$PROJECT_DIR$/pilote/view/template/login.html" />
         <option value="$PROJECT_DIR$/pilote/view/template/playlists.html" />
         <option value="$PROJECT_DIR$/pilote/view/template/register.html" />
-        <option value="$PROJECT_DIR$/pilote/view/js/controller/main.js" />
-        <option value="$PROJECT_DIR$/pilote/view/js/controller/playlists.js" />
         <option value="$PROJECT_DIR$/silos/users/server/api-user.js" />
         <option value="$PROJECT_DIR$/pilote/view/js/factory/user.factory.js" />
         <option value="$PROJECT_DIR$/pilote/config/silos-config.yml" />
         <option value="$PROJECT_DIR$/silos/users/server/server.js" />
-        <option value="$PROJECT_DIR$/pilote/view/template/main.html" />
         <option value="$PROJECT_DIR$/pilote/server/server.js" />
-        <option value="$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js" />
-        <option value="$PROJECT_DIR$/silos/videos/server/api-playlist.js" />
         <option value="$PROJECT_DIR$/pilote/view/template/admin.html" />
         <option value="$PROJECT_DIR$/pilote/view/js/factory/admin_service.js" />
         <option value="$PROJECT_DIR$/pilote/view/js/controller/admin.js" />
-        <option value="$PROJECT_DIR$/pilote/server/api.js" />
         <option value="$PROJECT_DIR$/silos/users/server/models/admin.js" />
         <option value="$PROJECT_DIR$/silos/users/server/api-admin.js" />
+        <option value="$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js" />
+        <option value="$PROJECT_DIR$/pilote/view/js/controller/playlists.js" />
+        <option value="$PROJECT_DIR$/pilote/server/api.js" />
+        <option value="$PROJECT_DIR$/silos/videos/server/models/playlist.js" />
+        <option value="$PROJECT_DIR$/silos/videos/server/api-playlist.js" />
+        <option value="$PROJECT_DIR$/pilote/view/template/main.html" />
+        <option value="$PROJECT_DIR$/pilote/view/js/controller/main.js" />
       </list>
     </option>
   </component>
@@ -359,6 +321,14 @@
               <item name="videos" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="VideoStation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="VideoStation" type="462c0819:PsiDirectoryNode" />
+              <item name="silos" type="462c0819:PsiDirectoryNode" />
+              <item name="videos" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -416,12 +386,12 @@
       <workItem from="1544907896706" duration="904000" />
       <workItem from="1544914205372" duration="418000" />
       <workItem from="1544915017752" duration="30276000" />
-      <workItem from="1546099044801" duration="49645000" />
+      <workItem from="1546099044801" duration="59532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84351000" />
+    <option name="totallyTimeSpent" value="94238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -504,11 +474,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/silos/videos/server/models/playlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/silos/videos/server/models/video.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -521,13 +486,6 @@
             <element signature="e#3059#4455#0" />
             <element signature="e#7437#9127#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/main_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -577,13 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="31" column="57" lean-forward="true" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -658,9 +609,6 @@
     <entry file="file://$PROJECT_DIR$/pilote/view/js/app.run.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/js/app.module.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/silos/users/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -688,39 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/template/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silos/users/server/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silos/videos/server/api-playlist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="171" selection-start-line="171" selection-end-line="171" />
-          <folding>
-            <element signature="e#313#1540#0" />
-            <element signature="e#1585#3598#0" />
-            <element signature="e#3644#5464#0" />
-            <element signature="e#5513#7660#0" />
-            <element signature="e#7709#10525#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pilote/view/template/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -735,20 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/admin_service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="80" column="34" lean-forward="true" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/silos/users/server/models/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pilote/view/template/playlists.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -759,47 +660,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/playlists.js">
+    <entry file="file://$PROJECT_DIR$/silos/users/server/api-admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="65" column="55" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+        <state relative-caret-position="195">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+          <folding>
+            <element signature="e#392#1993#0" />
+            <element signature="e#2039#2903#0" />
+            <element signature="e#2947#2953#0" />
+            <element signature="e#2994#3000#0" />
+            <element signature="e#3039#3048#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silos/users/server/models/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silos/users/server/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="11" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="17" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/js/app.module.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/admin_service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="80" column="34" lean-forward="true" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/playlist_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="37" column="28" lean-forward="true" selection-start-line="37" selection-start-column="28" selection-end-line="37" selection-end-column="28" />
+        <state relative-caret-position="126">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/playlists.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silos/videos/server/models/playlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pilote/server/api.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="803">
-          <caret line="245" column="40" selection-start-line="245" selection-start-column="40" selection-end-line="245" selection-end-column="40" />
+        <state relative-caret-position="57">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
           <folding>
             <element signature="e#1447#1827#0" />
             <element signature="e#1938#2608#0" />
             <element signature="e#2724#3457#0" />
             <element signature="e#3574#4310#0" />
-            <element signature="e#5208#5947#0" />
-            <element signature="e#6055#6865#0" />
-            <element signature="e#7754#8426#0" />
-            <element signature="e#8542#9214#0" />
-            <element signature="e#8434#12282#0" />
+            <element signature="e#4427#5101#0" />
+            <element signature="e#6043#6782#0" />
+            <element signature="e#6890#7700#0" />
+            <element signature="e#7810#8520#0" />
+            <element signature="e#8629#9381#0" />
+            <element signature="e#9486#10167#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/silos/users/server/api-admin.js">
+    <entry file="file://$PROJECT_DIR$/pilote/view/js/factory/main_service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="131" column="31" lean-forward="true" selection-start-line="131" selection-start-column="31" selection-end-line="131" selection-end-column="31" />
+        <state relative-caret-position="360">
+          <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/silos/videos/server/api-playlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="190" column="32" lean-forward="true" selection-start-line="190" selection-start-column="32" selection-end-line="190" selection-end-column="32" />
           <folding>
-            <element signature="e#392#1993#0" />
-            <element signature="e#2994#3000#0" />
-            <element signature="e#3039#3048#0" />
+            <element signature="e#313#1540#0" />
+            <element signature="e#1585#3598#0" />
+            <element signature="e#7709#10525#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/template/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="43" column="14" lean-forward="true" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pilote/view/js/controller/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
         </state>
       </provider>
     </entry>

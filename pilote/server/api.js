@@ -177,7 +177,7 @@ class API {
                 });
         });
 		
-	// playlists
+	    // playlists
         this.router.post(`/${silosConfig.playlists.endpoints.playlists}/add`, (req, res) => {
             var that = this;
 

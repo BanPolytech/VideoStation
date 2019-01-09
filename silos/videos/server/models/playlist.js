@@ -24,6 +24,20 @@ class Playlist {
         return that.collection.findOneAndUpdate(myQuery, { $set: valuesToUpdate }, { returnOriginal: false });
     }
 
+    pushToPlaylist(playlistID, filters, valuesToPush) {
+        const that = this;
+        if (!ObjectID.isValid(playlistID)) {
+            return Promise.reject(new Error("INVALID_LIST_ID_FORMAT"));
+        }
+        var myQuery = { _id: new ObjectID(playlistID) };
+        Object.assign(myQuery, filters);
+        if (Object.keys(valuesToPush).length === 0 && valuesToPush.constructor === Object) {
+            return Promise.reject(new Error("NO_PROPERTY_WAS_PROVIDED_TO_UPDATE"));
+        }
+        return that.collection.findOneAndUpdate(myQuery, { $push: valuesToPush }, { returnOriginal: false });
+
+    }
+
     deletePlaylist(playlistID, filters) {
         const that = this;
         if (!ObjectID.isValid(playlistID)) {

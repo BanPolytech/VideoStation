@@ -17,7 +17,7 @@ class ApiAdmin {
 			var email = req.body.mail;
 			var password = req.body.pwd;
 			var enabled = req.body.enabled;
-			var admin = req.body.admin;
+			var adminStatus = req.body.admin;
 
 			// check params
 			if (!email || !password) {
@@ -45,6 +45,7 @@ class ApiAdmin {
 
 			var database = new Database();
 			var user;
+			var admin;
 
 			database
 				.connectDB()
@@ -53,6 +54,7 @@ class ApiAdmin {
 				})
 				.then(usersCollection => {
 					user = new User(usersCollection);
+					admin = new Admin(usersCollection);
 					return user.findUserByEmail(email);
 				})
 				.then(userFound => {
@@ -62,7 +64,7 @@ class ApiAdmin {
 					return bcrypt.hash(password, config.serverConfig.crypto.saltRound);
 				})
 				.then(passwordHashed => {
-					return user.createUser(email, passwordHashed);
+					return admin.createUser(email, passwordHashed, enabled, adminStatus);
 				})
 				.then(newUser => {
 					console.log("CREATE USER : " + newUser.toString());

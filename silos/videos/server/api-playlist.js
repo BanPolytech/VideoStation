@@ -169,6 +169,69 @@ class APIPlaylist {
 
         });
 
+        router.post("/add", (req, res) => {
+
+            var that = this;
+
+            //get param
+            var v_link, userID, playlistID;
+
+            try {
+                // name = req.body.playlist.name;
+                userID = req.body.token.id;
+                v_link = req.body.v_link;
+                playlistID = req.body.id_p;
+                // userID = req.body.id;
+
+            } catch (e) {
+                res.send(this.makeError("MISSING_PARAMS"));
+            }
+
+            console.log(userID);
+            console.log(v_link);
+            console.log(playlistID);
+
+            var database = new Database();
+            var playlist;
+
+            database
+                .connectDB()
+                .then(db => {
+                    return db.collection("playlists");
+                })
+                .then(playlistsCollection => {
+                    playlist = new Playlist(playlistsCollection);
+
+                    var values = {};
+
+                    // add data to update
+                    if (v_link) {
+                        values.videos = v_link;
+                    }
+
+                    // we will also check if playlist belongs to user before update
+                    var otherFilter = { userID: userID };
+
+                    return playlist.pushToPlaylist(playlistID, otherFilter, values);
+                })
+                .then(updatedPlaylist => {
+                    if (!updatedPlaylist.value) {
+                        return Promise.reject(new Error("PLAYLIST_NOT_EXIST"));
+                    }
+
+                    console.log("UPDATED PLAYLIST");
+                    return res.send(that.makeSuccess({ playlist: updatedPlaylist.value }));
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.send(this.makeError(err.message));
+                    return;
+                })
+                .then(function() {
+                    database.closeDB();
+                });
+        });
+
         router.post("/update", (req, res) => {
             var that = this;
 
@@ -220,10 +283,10 @@ class APIPlaylist {
                 })
                 .then(updatedPlaylist => {
                     if (!updatedPlaylist.value) {
-                        return Promise.reject(new Error("LIST_NOT_EXIST"));
+                        return Promise.reject(new Error("PLAYLIST_NOT_EXIST"));
                     }
 
-                    console.log("UPDATED LIST");
+                    console.log("UPDATED PLAYLIST");
                     return res.send(that.makeSuccess({ playlist: updatedPlaylist.value }));
                 })
                 .catch(err => {

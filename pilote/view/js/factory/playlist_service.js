@@ -22,7 +22,7 @@
         return service;
 
         function Add(v_link, id_p) {
-            return appAPI.get(makeEndpoint('add'), {
+            return appAPI.post(makeEndpoint('add'), {
                 v_link: v_link,
                 id_p: id_p
             })
