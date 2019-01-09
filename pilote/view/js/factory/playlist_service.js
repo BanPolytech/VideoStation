@@ -66,7 +66,7 @@
         }
 
         function LoadAll() {
-            return appAPI.get(makeVideoEndpoint('all'), {})
+            return appAPI.get(makePlaylistEndpoint('all'), {})
             .then(response => {
                 return response;
             })

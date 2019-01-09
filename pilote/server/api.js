@@ -101,10 +101,19 @@ class API {
         });
 
         // video
-        this.router.post(`/${silosConfig.search.endpoints.search}/add`), (req, res) => {
+        this.router.post(`/${silosConfig.search.endpoints.search}/add`, (req, res) => {
 
             var that = this;
             var v_obj = req.body.v_obj;
+
+            if (v_obj.brand === "Vimeo") {
+                v_obj.title = v_obj.name;
+                v_obj.channelId = v_obj.user.uri;
+                v_obj.channelTitle = v_obj.user.name;
+                v_obj.id = v_obj.uri;
+                v_obj.publishedAt = v_obj.release_time;
+                v_obj.thumbnails = v_obj.pictures;
+            }
 
             axios
                 .post(
@@ -114,8 +123,9 @@ class API {
                         "add"
                     ),
                     {
-                        query: req.body.query,
-                        token: req.body.token
+                        idPlaylist: req.body.id_p,
+                        token: req.body.token,
+                        video: v_obj
                     }
                 )
                 .then(function(response) {
@@ -124,7 +134,7 @@ class API {
                 .catch(function(error) {
                     res.send(that.makeError(error.message));
                 });
-        };
+        });
 
         // playlists
         this.router.get(`/${silosConfig.playlists.endpoints.playlists}/all`, (req, res) => {

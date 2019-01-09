@@ -154,14 +154,15 @@ class APIVideo {
 
                 title = req.body.video.title;
                 brand = req.body.video.brand;
-                channelId = req.body.video.channel.id;
-                channelTitle = req.body.video.channel.title;
+                channelId = req.body.video.channelId;
+                channelTitle = req.body.video.channelTitle;
                 description = req.body.video.description;
                 videoId = req.body.video.id;
                 link = req.body.video.link;
                 publishedAt = req.body.video.publishedAt;
                 thumbnails = req.body.video.thumbnails;
 
+                // console.log(JSON.stringify(req.body.video, null, 4));
 
                 if (!idPlaylist ||
                     !userID ||

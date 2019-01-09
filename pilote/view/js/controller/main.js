@@ -11,7 +11,7 @@
 		$scope.videos = null;
 		$scope.playlists = null;
 		$scope.show_playlist = false;
-        	$scope.video_to_add = "";
+		$scope.video_to_add = "";
 		
 		function loadAll(){
             PlaylistService.LoadAll()
