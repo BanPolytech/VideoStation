@@ -64,7 +64,7 @@
         };
 
         $scope.delete_from_playlist = function delete_from_playlist(id_v){
-            if ($scope.selected_playlist != 0) {
+            if ($scope.selected_playlist !== 0) {
                MainService.Delete(id_v)
                     .then(response => {
                         console.log(response);

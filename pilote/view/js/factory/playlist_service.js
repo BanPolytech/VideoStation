@@ -27,8 +27,8 @@
         return service;
 
         function Delete(idp) {
-            return appAPI.post(makeVideoEndpoint('delete'), {
-                playlistID: idp
+            return appAPI.post(makePlaylistEndpoint('delete'), {
+                playlistId: idp
             })
                 .then(response => {
                     return response;

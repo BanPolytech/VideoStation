@@ -306,7 +306,7 @@ class APIPlaylist {
             var that = this;
 
             //get param
-            var playlistID = req.body.playlist._id;
+            var playlistID = req.body.playlistId;
             var userID = req.body.token.id;
 
             //check param

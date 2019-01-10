@@ -21,7 +21,7 @@
         return service;
 
         function Delete(videoId) {
-            return appAPI.post(makeVideoEndpoint('delete'), {
+            return appAPI.post(makeEndpoint('delete'), {
                 videoId: videoId
             })
                 .then(response => {

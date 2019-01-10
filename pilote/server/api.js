@@ -128,6 +128,30 @@ class API {
                 });
         });
 
+        // video
+        this.router.post(`/${silosConfig.search.endpoints.search}/delete`, (req, res) => {
+            var that = this;
+
+            axios
+                .post(
+                    that.makeFullEndpoint(
+                        silosConfig.search,
+                        silosConfig.search.endpoints.search,
+                        "delete"
+                    ),
+                    {
+                        videoId: req.body.videoId,
+                        token: req.body.token
+                    }
+                )
+                .then(function(response) {
+                    res.json(response.data);
+                })
+                .catch(function(error) {
+                    res.send(that.makeError(error.message));
+                });
+        });
+
         // playlists
         this.router.get(`/${silosConfig.playlists.endpoints.playlists}/all`, (req, res) => {
             var that = this;
@@ -242,55 +266,7 @@ class API {
                         "delete"
                     ),
                     {
-                        id_p: req.body.id_p,
-                        token: req.body.token
-                    }
-                )
-                .then(function(response) {
-                    res.json(response.data);
-                })
-                .catch(function(error) {
-                    res.send(that.makeError(error.message));
-                });
-        });
-
-        // playlists
-        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/delete`, (req, res) => {
-            var that = this;
-
-            axios
-                .post(
-                    that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
-                        "delete"
-                    ),
-                    {
                         playlistId: req.body.playlistId,
-                        token: req.body.token
-                    }
-                )
-                .then(function(response) {
-                    res.json(response.data);
-                })
-                .catch(function(error) {
-                    res.send(that.makeError(error.message));
-                });
-        });
-
-        // search
-        this.router.post(`/${silosConfig.search.endpoints.search}/delete`, (req, res) => {
-            var that = this;
-
-            axios
-                .post(
-                    that.makeFullEndpoint(
-                        silosConfig.search,
-                        silosConfig.search.endpoints.search,
-                        "delete"
-                    ),
-                    {
-                        videoId: req.body.videoId,
                         token: req.body.token
                     }
                 )

@@ -229,7 +229,7 @@ class APIVideo {
 
             //check param
             if (!videoID || !userID) {
-                res.send(this.makeError("MISSING_PARAMS"));
+                res.send(this.makeError("MISSING_PARAMS (check)"));
                 return;
             }
 
