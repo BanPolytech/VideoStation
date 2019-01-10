@@ -383,7 +383,7 @@ class API {
                 });
         });
 
-        //admin
+        // admin
         this.router.post(`/${silosConfig.admin.endpoints.admin}/list`, (req, res) => {
             var that = this;
 

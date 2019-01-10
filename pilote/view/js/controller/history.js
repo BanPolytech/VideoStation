@@ -12,6 +12,10 @@
         HistoryService.GetHistory()
 		.then(response => {
 			console.log(response);
+			response.historiques.forEach(function (history) {
+				history.formatedDate = new Date(history.date);
+				history.formatedDate = history.formatedDate.toLocaleString();
+			});
 			$scope.histories = response.historiques;
 
 		})

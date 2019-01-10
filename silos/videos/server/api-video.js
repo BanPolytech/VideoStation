@@ -269,8 +269,6 @@ class APIVideo {
                 });
 
         });
-
-
     }
 
     makeError(errors) {
