@@ -1,7 +1,7 @@
 <div id="history_ctrl">
 	<div ng-repeat="history in histories">
 		<div class="history_block">
-			<div class="history_text" ng-click="redirect(history.text)">
+			<div class="history_text" ng-click="redirect(history.query)">
 				You searched: <b>{{history.query}}</b>
 				<span style="float: right">{{history.date}}</span>
 			</div>

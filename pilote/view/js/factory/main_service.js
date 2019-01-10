@@ -16,8 +16,22 @@
  
         service.Search = Search;
         service.TrustLink = TrustLink;
+        service.Delete = Delete;
  
         return service;
+
+        function Delete(videoId) {
+            return appAPI.post(makeVideoEndpoint('delete'), {
+                videoId: videoId
+            })
+                .then(response => {
+                    return response;
+                })
+                .catch(error => {
+                    console.log(`playlists error: ${error}`);
+                    return Promise.reject(error);
+                });
+        }
  
         function Search(searchtext) {
             return appAPI.get(makeEndpoint('search'), {

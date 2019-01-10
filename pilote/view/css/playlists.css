@@ -24,6 +24,11 @@
 	cursor:pointer;
 }
 
+.playlist_list img{
+	float:right;
+	height:16px;
+}
+
 .playlist_list:hover{
 	background:#E4E4E4;
 }
@@ -79,4 +84,10 @@
 	-moz-border-radius:  0 4px 0 0;
 	-webkit-border-radius:  0 4px 0 0;
 	border-radius:  0 4px 0 0;
+}
+
+.delete_playlist{
+	cursor:pointer;
+	width:80%;
+	background-image: linear-gradient(red, yellow);
 }

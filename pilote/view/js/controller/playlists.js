@@ -63,6 +63,36 @@
 			});
         };
 
+        $scope.delete_from_playlist = function delete_from_playlist(id_v){
+            if ($scope.selected_playlist != 0) {
+               MainService.Delete(id_v)
+                    .then(response => {
+                        console.log(response);
+                        load_function($scope.selected_playlist);
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    })
+                    .then(function () {
+                        $scope.$apply();
+                    });
+            }
+        };
+
+        $scope.delete_playlist = function delete_playlist(idp){
+            PlaylistService.Delete(idp)
+                .then(response => {
+                    console.log(response);
+                    loadAll();
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .then(function () {
+                    $scope.$apply();
+                });
+        };
+
     }
 
 })();
