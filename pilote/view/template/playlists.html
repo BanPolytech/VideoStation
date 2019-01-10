@@ -2,6 +2,7 @@
 	<div id="affichage_playlists">
 		<div ng-repeat="video in videos">
 			<iframe ng-src="{{video.trustlink}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
+			<button class="delete_playlist" ng-click="delete_from_playlist(video._id)">delete</button>
 		</div>
 	</div>
 	<div id="menu_playlist">
@@ -12,7 +13,10 @@
 			</form>
 		</div>
 		<div ng-repeat="playlist in playlists" >
-			<div class="playlist_list" ng-class="{playlist_selected: selected_playlist === playlist._id}" ng-click="load(playlist._id)" id="idp_{{playlist._id}}">{{playlist.name}}</div>
+			<div class="playlist_list" ng-class="{playlist_selected: selected_playlist === playlist._id}" ng-click="load(playlist._id)" id="idp_{{playlist._id}}">
+				{{playlist.name}}
+				<img ng-click="delete_playlist(playlist._id)" src="imgs/croix.jpg"/>
+			</div>		
 		</div>
 	</div>
 </div>
