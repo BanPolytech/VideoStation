@@ -68,6 +68,7 @@
 			loggedState = false;
 			adminState = false;
            		 $rootScope.admin = false;
+			$rootScope.logged = false;
 		}
 		
 		function verify() {
