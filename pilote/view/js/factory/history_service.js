@@ -31,7 +31,9 @@
         }
 
         function Add(query) {
+            var date = Date.now();
             return appAPI.post(makeEndpoint('add'), {
+                date: date,
                 query: query
             })
                 .then(response => {

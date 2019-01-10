@@ -19,7 +19,7 @@
 		<div ng-repeat="p in playlists" ng-click="add_in_playlist(p._id)" class="liste_playlist_main">
 			{{p.name}}
 		</div>
-		<button ng-show="logged" ng-click="hide_playlist()" style="background:grey;color:white;">Cancel</button>
+		<button ng-click="hide_playlist()" style="background:grey;color:white;">Cancel</button>
 	</div>
 	
 	<br/>
@@ -33,13 +33,13 @@
 		<div id="liste_vimeo">
 			<div ng-repeat="vimeo in vimeos" class="iframes_englober">
 				<iframe ng-src="{{vimeo.trustlink}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
-				<button class="add_playlist" ng-click="actual_video(vimeo)">add</button>
+				<button ng-show="logged" class="add_playlist" ng-click="actual_video(vimeo)">add</button>
 			</div>
 		</div>
 		<div id="liste_youtube">
 			<div ng-repeat="youtube in youtubes" class="iframes_englober">
 				<iframe ng-src="{{youtube.trustlink}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
-				<button class="add_playlist" ng-click="actual_video(youtube)">add</button>
+				<button ng-show="logged" class="add_playlist" ng-click="actual_video(youtube)">add</button>
 			</div>
 		</div>
 	</div>

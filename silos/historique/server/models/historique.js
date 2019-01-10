@@ -7,9 +7,9 @@ class Historique {
 		that.collection = collection;
 	}
 	
-	createHistorique(ofUserID, query) {
+	createHistorique(ofUserID, query, date) {
 		const that = this;
-		return that.collection.insertOne({ userID: ofUserID, query: query});
+		return that.collection.insertOne({ userID: ofUserID, query: query, date: date});
 	}
 	updateHistorique(historiqueID, filters, valuesToUpdate) {
 		const that = this;
@@ -37,7 +37,7 @@ class Historique {
 	getHistoriques(ofUserID) {
 		const that = this;
 		const query = { userID: ofUserID };
-		return that.collection.find(query).toArray();
+		return that.collection.find(query).sort({date: -1}).toArray();
 	}
 	
 	checkHistorique(historiqueID, userID) {

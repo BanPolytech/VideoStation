@@ -109,17 +109,16 @@ class ApiHistorique {
 			var that = this;
 			
 			//get param
-			var query, userID;
+			var query, userID, date;
 			
 			try {
-				// query = req.body.historique.query;
 				userID = req.body.token.id;
 				query = req.body.query;
-				// userID = req.body.id;
+				date = req.body.date;
 
-				console.log(query, userID);
+				console.log(query, userID, date);
 				
-				if (!query || !userID) throw "";
+				if (!query || !userID || !date) throw "";
 			} catch (e) {
 				res.send(this.makeError("MISSING_PARAMS"));
 				return;
@@ -144,7 +143,7 @@ class ApiHistorique {
 			})
 			.then(historiquesCollection => {
 				historique = new Historique(historiquesCollection);
-				return historique.createHistorique(userID, query);
+				return historique.createHistorique(userID, query, date);
 			})
 			.then(newHistorique => {
 				console.log("CREATED HISTORY");

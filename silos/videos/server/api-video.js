@@ -218,7 +218,7 @@ class APIVideo {
 
             //get param
             try {
-                videoID = req.body.video.id;
+                videoID = req.body.videoId;
                 userID = req.body.token.id;
 
             }catch (e) {

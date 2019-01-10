@@ -37,7 +37,7 @@
 			.then(response => {
 				console.log(response);
 				$scope.playlists = response.playlists;
-				load_function($scope.playlists[0].id);
+				load_function($scope.playlists[0]._id);
 			})
 			.catch(error => {
 				console.log(error);
