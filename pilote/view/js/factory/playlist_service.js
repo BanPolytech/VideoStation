@@ -22,8 +22,22 @@
         service.New = New;
         service.LoadAll = LoadAll;
         service.Add = Add;
+        service.Delete = Delete;
 
         return service;
+
+        function Delete(idp) {
+            return appAPI.post(makeVideoEndpoint('delete'), {
+                playlistID: idp
+            })
+                .then(response => {
+                    return response;
+                })
+                .catch(error => {
+                    console.log(`playlists error: ${error}`);
+                    return Promise.reject(error);
+                });
+        }
 
         function Add(v_obj, id_p) {
             return appAPI.post(makeVideoEndpoint('add'), {
