@@ -19,7 +19,7 @@
 		<div ng-repeat="p in playlists" ng-click="add_in_playlist(p._id)" class="liste_playlist_main">
 			{{p.name}}
 		</div>
-		<button ng-click="hide_playlist()" style="background:grey;color:white;">Cancel</button>
+		<button ng-show="logged" ng-click="hide_playlist()" style="background:grey;color:white;">Cancel</button>
 	</div>
 	
 	<br/>

@@ -13,18 +13,20 @@
 		$scope.show_playlist = false;
 		$scope.video_to_add = "";
 		
-		function loadAll(){
-            PlaylistService.LoadAll()
-                .then(response => {
-                    console.log(response);
-                    $scope.playlists = response.playlists;
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-                .then(function() {
-                    $scope.$apply();
-                });
+	function loadAll(){
+		if(UserFactory.isLogged){
+		    PlaylistService.LoadAll()
+			.then(response => {
+			    console.log(response);
+			    $scope.playlists = response.playlists;
+			})
+			.catch(error => {
+			    console.log(error);
+			})
+			.then(function() {
+			    $scope.$apply();
+			});
+		}
         }
 
         loadAll();
