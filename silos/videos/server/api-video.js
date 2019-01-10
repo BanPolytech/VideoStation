@@ -88,10 +88,6 @@ class APIVideo {
             //slug = this.deslugify(slug);
             console.log(slug);
 
-            //add to historuy
-
-
-
             Promise.all([Vimeo.search(slug.toString().toLowerCase(), 10), Youtube.search(slug.toString().toLowerCase(),10)]).then(function (data) {
                 res.send(that.makeSuccess({videos : data}))
             }).catch(function (err) {
@@ -145,7 +141,7 @@ class APIVideo {
             var that = this;
 
             //get param
-            var idPlaylist, userID, channelId, channelTitle, description, videoId, link, publishedAt, thumbnails, title, brand;
+            var idPlaylist, userID, channelId, channelTitle, description, videoId, link, trustlink, publishedAt, thumbnails, title, brand;
 
             try {
                 idPlaylist = req.body.idPlaylist;
@@ -157,8 +153,9 @@ class APIVideo {
                 channelId = req.body.video.channelId;
                 channelTitle = req.body.video.channelTitle;
                 description = req.body.video.description;
-                videoId = req.body.video.id;
+                videoId = req.body.video.videoId;
                 link = req.body.video.link;
+                trustlink = req.body.video.trustlink;
                 publishedAt = req.body.video.publishedAt;
                 thumbnails = req.body.video.thumbnails;
 
@@ -174,7 +171,8 @@ class APIVideo {
                     !brand ||
                     (typeof publishedAt === 'undefined') ||
                     (typeof thumbnails === 'undefined') ||
-                    (typeof title === 'undefined')) throw "";
+                    (typeof title === 'undefined') ||
+                    (typeof trustlink === 'undefined')) throw "";
             } catch (e) {
                 res.send(this.makeError("MISSING_PARAMS"));
                 return;
@@ -199,7 +197,7 @@ class APIVideo {
                     if (!foundPlaylist) {
                         return Promise.reject(new Error("PLAYLIST_NOT_EXIST"));
                     }
-                    return video.createVideo(userID, idPlaylist,  channelId, channelTitle, description, videoId, link, publishedAt, thumbnails, title, brand);
+                    return video.createVideo(userID, idPlaylist,  channelId, channelTitle, description, videoId, link, trustlink, publishedAt, thumbnails, title, brand);
                 })
                 .then(newVideo => {
                     console.log("CREATED VIDEO");

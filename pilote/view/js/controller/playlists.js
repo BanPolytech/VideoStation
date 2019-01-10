@@ -3,9 +3,9 @@
 
     todoApp.controller("playlistsCtrl", playlistsCtrl);
 
-    playlistsCtrl.$inject = ["$scope", "$sce", "PlaylistService"];
+    playlistsCtrl.$inject = ["$scope", "$sce", "PlaylistService", "MainService"];
 
-    function playlistsCtrl($scope, $sce, PlaylistService) {
+    function playlistsCtrl($scope, $sce, PlaylistService, MainService) {
         const vm = this;
 
         $scope.playlists = null;
@@ -17,7 +17,11 @@
             PlaylistService.Load(idp)
                 .then(response => {
                     console.log(response);
-                    $scope.videos = response;
+                    $scope.videos = response.playlist.videos;
+                    $scope.videos.forEach(function (video) {
+                        video.trustlink = MainService.TrustLink(video, $sce);
+                    });
+                    console.log($scope.videos);
                 })
                 .catch(error => {
                     console.log(error);

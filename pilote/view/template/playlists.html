@@ -1,7 +1,7 @@
 <div style="position:relative;">
 	<div id="affichage_playlists">
 		<div ng-repeat="video in videos">
-			<iframe ng-src="{{video.link}}" allowfullscreen="" width="29%" height="175" frameborder="0" class="videos_frames"></iframe>       
+			<iframe ng-src="{{video.trustlink}}" allowfullscreen="" width="80%" height="175" frameborder="0" class="videos_frames"></iframe>
 		</div>
 	</div>
 	<div id="menu_playlist">
@@ -12,7 +12,7 @@
 			</form>
 		</div>
 		<div ng-repeat="playlist in playlists" >
-			<div class="playlist_list" ng-class="{playlist_selected: selected_playlist === playlist.id}" ng-click="load(playlist.id)" id="idp_{{playlist.id}}">{{playlist.name}}</div>
+			<div class="playlist_list" ng-class="{playlist_selected: selected_playlist === playlist._id}" ng-click="load(playlist._id)" id="idp_{{playlist._id}}">{{playlist.name}}</div>
 		</div>
 	</div>
 </div>

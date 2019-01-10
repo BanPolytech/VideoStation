@@ -40,7 +40,7 @@
         }
 
         function Load(id_p) {
-            return appAPI.get(makePlaylistEndpoint('load'), {
+            return appAPI.get(makePlaylistEndpoint('get'), {
                 id: id_p
             })
             .then(response => {

@@ -106,15 +106,6 @@ class API {
             var that = this;
             var v_obj = req.body.v_obj;
 
-            if (v_obj.brand === "Vimeo") {
-                v_obj.title = v_obj.name;
-                v_obj.channelId = v_obj.user.uri;
-                v_obj.channelTitle = v_obj.user.name;
-                v_obj.id = v_obj.uri;
-                v_obj.publishedAt = v_obj.release_time;
-                v_obj.thumbnails = v_obj.pictures;
-            }
-
             axios
                 .post(
                     that.makeFullEndpoint(
@@ -164,7 +155,7 @@ class API {
         });
 
         // playlists
-        this.router.get(`/${silosConfig.playlists.endpoints.playlists}/load`, (req, res) => {
+        this.router.get(`/${silosConfig.playlists.endpoints.playlists}/get`, (req, res) => {
             var that = this;
 
             axios
@@ -172,11 +163,11 @@ class API {
                     that.makeFullEndpoint(
                         silosConfig.playlists,
                         silosConfig.playlists.endpoints.playlists,
-                        "load"
+                        "get"
                     ),
                     {
                         params: {
-                        	id: req.query.id,
+                        	idPlaylist: req.query.id,
                             token: req.body.token
                         }
                     }
@@ -367,212 +358,9 @@ class API {
                     res.send(that.makeError(error.message));
                 });
         });
-		
-		/*this.router.get(`/${silosConfig.task.endpoints.task}/all`, (req, res) => {
-			var that = this;
-			
-			axios
-			.get(
-				that.makeFullEndpoint(
-					silosConfig.task,
-					silosConfig.task.endpoints.task,
-					"all"
-				),
-				{
-					params: {
-						idList: req.query.idList,
-						isDone: req.query.isDone,
-						token: req.body.token
-					}
-				}
-			)
-			.then(function(response) {
-				res.json(response.data);
-			})
-			.catch(function(error) {
-				res.send(that.makeError(error.message));
-			});
-		});
-		
-		
-		this.router.put(
-			`/${silosConfig.task.endpoints.task}/update`,
-			(req, res) => {
-				var that = this;
-				
-				axios
-				.post(
-					that.makeFullEndpoint(
-						silosConfig.task,
-						silosConfig.task.endpoints.task,
-						"update"
-					),
-					{
-						token: req.body.token,
-						task: req.body.task
-					}
-				)
-				.then(function(response) {
-					res.json(response.data);
-				})
-				.catch(function(error) {
-					res.send(that.makeError(error.message));
-				});
-			}
-		);
-		
-		this.router.delete(
-			`/${silosConfig.task.endpoints.task}/delete`,
-			(req, res) => {
-				var that = this;
-				
-				axios
-				.post(
-					that.makeFullEndpoint(
-						silosConfig.task,
-						silosConfig.task.endpoints.task,
-						"delete"
-					),
-					{
-						token: req.body.token,
-						task: req.body.task
-					}
-				)
-				.then(function(response) {
-					res.json(response.data);
-				})
-				.catch(function(error) {
-					res.send(that.makeError(error.message));
-				});
-			}
-		);
-		
-		// list
-		this.router.post(`/${silosConfig.task.endpoints.list}/add`, (req, res) => {
-			var that = this;
-			
-			axios
-			.post(
-				that.makeFullEndpoint(
-					silosConfig.task,
-					silosConfig.task.endpoints.list,
-					"add"
-				),
-				{
-					list: req.body.list,
-					token: req.body.token
-				}
-			)
-			.then(function(response) {
-				res.json(response.data);
-			})
-			.catch(function(error) {
-				res.send(that.makeError(error.message));
-			});
-		});
-		
-		this.router.get(`/${silosConfig.task.endpoints.list}/all`, (req, res) => {
-			var that = this;
-			
-			axios
-			.get(
-				that.makeFullEndpoint(
-					silosConfig.task,
-					silosConfig.task.endpoints.list,
-					"all"
-				),
-				{
-					params: {
-						token: req.body.token
-					}
-				}
-			)
-			.then(function(response) {
-				res.json(response.data);
-			})
-			.catch(function(error) {
-				res.send(that.makeError(error.message));
-			});
-		});
 
-		this.router.get(`/${silosConfig.task.endpoints.list}/get`, (req, res) => {
-			var that = this;
-			
-			axios
-			.get(
-				that.makeFullEndpoint(
-					silosConfig.task,
-					silosConfig.task.endpoints.list,
-					"get"
-				),
-				{
-					params: {
-						idList: req.query.idList,
-						token: req.body.token
-					}
-				}
-			)
-			.then(function(response) {
-				res.json(response.data);
-			})
-			.catch(function(error) {
-				res.send(that.makeError(error.message));
-			});
-		});
-		
-		this.router.put(
-			`/${silosConfig.task.endpoints.list}/update`,
-			(req, res) => {
-				var that = this;
-				
-				axios
-				.post(
-					that.makeFullEndpoint(
-						silosConfig.task,
-						silosConfig.task.endpoints.list,
-						"update"
-					),
-					{
-						token: req.body.token,
-						list: req.body.list
-					}
-				)
-				.then(function(response) {
-					res.json(response.data);
-				})
-				.catch(function(error) {
-					res.send(that.makeError(error.message));
-				});
-			}
-		);
-		
-		this.router.delete(
-			`/${silosConfig.task.endpoints.list}/delete`,
-			(req, res) => {
-				var that = this;
-				
-				axios
-				.post(
-					that.makeFullEndpoint(
-						silosConfig.task,
-						silosConfig.task.endpoints.list,
-						"delete"
-					),
-					{
-						token: req.body.token,
-						list: req.body.list
-					}
-				)
-				.then(function(response) {
-					res.json(response.data);
-				})
-				.catch(function(error) {
-					res.send(that.makeError(error.message));
-				});
-			}
-		);*/
 	}
-	
+
 	makeFullEndpoint(silo, name, endpoint) {
 		const fullEndpoint = `http://${silo.host}:${silo.port}/${name}/${endpoint}`;
 		console.log(`Making endpoint: ${fullEndpoint}`);

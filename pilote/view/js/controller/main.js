@@ -65,17 +65,25 @@
 			.then(response => {
 				console.log(response);
 
+				//FORMAT VIMEO VIDEO OBJ
 				var vids_vimeo = response.videos[0].data;
 				vids_vimeo.forEach(function (element) {
 
-					let id = element.uri.replace("videos", "video");
-					element.trustlink = $sce.trustAsResourceUrl("https://player.vimeo.com" + id);
+					element.title = element.name;
+					element.channelId = element.user.uri;
+					element.channelTitle = element.user.name;
+					element.videoId = element.uri.replace("/videos/", "");
+					element.publishedAt = element.release_time;
+					element.thumbnails = element.pictures;
+					element.trustlink = MainService.TrustLink(element, $sce);
 				});
 				$scope.vimeos = vids_vimeo;
 
+				//FORMAT YOUTUBE VIDEO OBJ
 				var vids_youtube = response.videos[1].results;
 				vids_youtube.forEach(function (element) {
-					element.trustlink = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + element.id);
+					element.videoId = element.id;
+					element.trustlink = MainService.TrustLink(element, $sce);
 				});
 				$scope.youtubes = vids_youtube;
 

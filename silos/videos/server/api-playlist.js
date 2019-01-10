@@ -67,6 +67,8 @@ class APIPlaylist {
                 return;
             }
 
+            console.log(idPlaylist);
+
             // idPlaylist check
             if (!check.string(idPlaylist) ||
                 !check.nonEmptyString(idPlaylist)

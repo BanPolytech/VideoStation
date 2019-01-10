@@ -15,6 +15,7 @@
         var service = {};
  
         service.Search = Search;
+        service.TrustLink = TrustLink;
  
         return service;
  
@@ -30,6 +31,22 @@
 				return Promise.reject(error);
 			});
         }
-		
+
+        function TrustLink(video_obj, $sce) {
+
+            var trustlink;
+
+            switch (video_obj.brand) {
+                case "Vimeo":
+                    trustlink = $sce.trustAsResourceUrl("https://player.vimeo.com/video/" + video_obj.videoId);
+                    break;
+
+                case "Youtube":
+                    trustlink = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + video_obj.videoId);
+                    break;
+            }
+
+            return trustlink;
+        }
     }
 })();
