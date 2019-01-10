@@ -27,6 +27,8 @@ class API {
 			if (token) {
 				// verifies secret and checks exp
 
+                console.log("into auth");
+
 				Token.verify(token)
 				.then(function(tokenDecoded) {
 					// if everything is good, save to request for use in other routes

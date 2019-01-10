@@ -72,7 +72,12 @@
 			loggedState = false;
 			localStorage.removeItem("token");
 			adminState = false;
+<<<<<<< HEAD
 			$rootScope.admin = false;
+=======
+           		 $rootScope.admin = false;
+			$rootScope.logged = false;
+>>>>>>> 63ff1607cceee1b322c3a6753b41d1f6f583a606
 		}
 		
 		function verify() {

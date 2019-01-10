@@ -106,83 +106,51 @@ class APINoAuth {
 			});
 
         this.router.get(`/${silosConfig.search.endpoints.search}/search`, (req, res) => {
-                var that = this;
+			var that = this;
 
-                //le token n'est pas nécessaire mais utile pour historique on le vérifie donc s'il est là
-                var token =
-                    req.body.token || req.query.token || req.headers["x-access-token"];
+			//le token n'est pas nécessaire mais utile pour historique on le vérifie donc s'il est là
+			var token =
+				req.body.token || req.query.token || req.headers["x-access-token"];
 
-                // decode token
-                if (token && token != "null") {
-                    // verifies secret and checks exp
+			// decode token
+			if (token && token !== "null") {
+				// verifies secret and checks exp
 
-                    Token.verify(token)
-                        .then(function(tokenDecoded) {
-                            // if everything is good, save to request for use in other routes
-                            token = req.body.token = req.query.token = req.headers["x-access-token"] = tokenDecoded;
-                            console.log(token);
+				Token.verify(token)
+					.then(function(tokenDecoded) {
+						// if everything is good, save to request for use in other routes
+						token = req.body.token = req.query.token = req.headers["x-access-token"] = tokenDecoded;
+					})
+					.catch(function(error) {
+						console.log(`Token error: ${error.message}`);
+						return res.json({
+							success: false,
+							error: "BAD_TOKEN"
+						});
+					});
+			}
 
-							axios
-								.get(
-									that.makeFullEndpoint(
-										silosConfig.search,
-										silosConfig.search.endpoints.search,
-										"search"
-									),
-									{
-										params: {
-											slug: req.query.text
-										}
-									}
-								)
-								.then(function(response) {
-									res.json(response.data);
-								})
-								.catch(function(error) {
-									res.send(that.makeError(error.message));
-								});
+			axios
+				.get(
+					that.makeFullEndpoint(
+						silosConfig.search,
+						silosConfig.search.endpoints.search,
+						"search"
+					),
+					{
+						params: {
+							slug: req.query.text
+						}
+					}
+				)
+				.then(function(response) {
+					res.json(response.data);
+				})
+				.catch(function(error) {
+					res.send(that.makeError(error.message));
+				});
 
-							axios
-								.post(
-									that.makeFullEndpoint(
-										silosConfig.history,
-										silosConfig.history.endpoints.history,
-										"add"
-									),
-									{
-										params: {
-											query: req.query.text,
-											token: req.body.token
-										}
-									}
-								)
-								.then(function (response) {
-									console.log("history entry")
-								})
-								.catch(function (error) {
-									console.log(error.message);
-								});
-
-                        })
-                        .catch(function(error) {
-                            console.log(`Token error: ${error.message}`);
-                            return res.json({
-                                success: false,
-                                error: "BAD_TOKEN"
-                            });
-                        });
-                }
-
-                //res.send(that.makeSuccess("ok"));
-                /*res.json([
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/x7HSKglzrOA")},
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/AX3Bsiq-13k")},
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/KR5CtMLuiqQ")},
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/viqEzmUOWBM")},
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/txWmd7QKFe8")},
-                    {"link":$sce.trustAsResourceUrl("https://www.youtube.com/embed/4CTGxKIzD7M")},
-                    {"link":$sce.trustAsResourceUrl("https://player.vimeo.com/video/305558448")}]);*/
-            });
+        });
 	}
 	
 	makeFullEndpoint(silo, name, endpoint) {

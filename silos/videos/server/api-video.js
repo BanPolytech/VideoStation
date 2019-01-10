@@ -76,7 +76,7 @@ class APIVideo {
             try {
                 slug = req.query.slug;
 
-                if (!slug  || !userID ) throw "";
+                if (!slug) throw "";
             } catch (e) {
                 res.send(this.makeError("MISSING_PARAMS"));
                 return;
