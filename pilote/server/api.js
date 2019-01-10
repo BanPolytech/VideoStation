@@ -229,6 +229,30 @@ class API {
                 });
         });
 
+        // playlists
+        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/delete`, (req, res) => {
+            var that = this;
+
+            axios
+                .post(
+                    that.makeFullEndpoint(
+                        silosConfig.playlists,
+                        silosConfig.playlists.endpoints.playlists,
+                        "delete"
+                    ),
+                    {
+                        id_p: req.body.id_p,
+                        token: req.body.token
+                    }
+                )
+                .then(function(response) {
+                    res.json(response.data);
+                })
+                .catch(function(error) {
+                    res.send(that.makeError(error.message));
+                });
+        });
+
         // admin
         this.router.get(`/${silosConfig.admin.endpoints.admin}/search`, (req, res) => {
             var that = this;
