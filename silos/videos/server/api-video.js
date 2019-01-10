@@ -71,13 +71,10 @@ class APIVideo {
             var that = this;
 
             //get param
-            var slug, userID;
-
-            console.log(req.query);
+            var slug;
 
             try {
                 slug = req.query.slug;
-                userID = JSON.parse(req.query.token).id;
 
                 if (!slug  || !userID ) throw "";
             } catch (e) {

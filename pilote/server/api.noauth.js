@@ -40,16 +40,14 @@ class APINoAuth {
 				});
 			});
 		
-		this.router.post(
-			`/${silosConfig.user.endpoints.user}/login`,
+		this.router.post(`/${silosConfig.user.endpoints.user}/login`,
 			// apply specific bruteforce on login
 			this.userBruteforce.getMiddleware({
 				key: function(req, res, next) {
 					// prevent too many attempts for the same email
 					next(req.body.email);
 				}
-			}),
-			(req, res) => {
+			}), (req, res) => {
 				var that = this;
 				axios
 				.post(
@@ -133,8 +131,7 @@ class APINoAuth {
 									),
 									{
 										params: {
-											slug: req.query.text,
-											token: req.body.token
+											slug: req.query.text
 										}
 									}
 								)

@@ -20,7 +20,11 @@
 			logout,
 			register,
 			get isLogged() {
-				return loggedState;
+				if(localStorage.getItem("token")){
+					return true;
+				}
+				else return false;
+				//return loggedState;
 			},
             get isAdmin() {
                 return adminState;
@@ -66,8 +70,9 @@
 			console.log("logout");
 			appAPI.setToken(null);
 			loggedState = false;
+			localStorage.removeItem("token");
 			adminState = false;
-           		 $rootScope.admin = false;
+			$rootScope.admin = false;
 		}
 		
 		function verify() {
