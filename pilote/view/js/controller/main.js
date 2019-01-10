@@ -3,9 +3,9 @@
 	
 	todoApp.controller("videosHomeCtrl", videosHomeCtrl);
 	
-	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce", "PlaylistService"];
+	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce", "PlaylistService", "UserFactory"];
 	
-	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce, PlaylistService) {
+	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce, PlaylistService, UserFactory) {
 		const vm = this;
 		
 		$scope.videos = null;
@@ -87,13 +87,15 @@
 				});
 				$scope.youtubes = vids_youtube;
 
-				HistoryService.Add($scope.searchtext)
-				.then(response => {
-					console.log("enregistrement dans historique");
-				})
-				.catch(error => {
-					console.log(error);
-				})
+				if(UserFactory.isLogged){
+					HistoryService.Add($scope.searchtext)
+					.then(response => {
+						console.log("enregistrement dans historique");
+					})
+					.catch(error => {
+						console.log(error);
+					})
+				}
 			})
 			.catch(error => {
 				console.log(error);
