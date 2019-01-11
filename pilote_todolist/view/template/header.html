@@ -1,0 +1,33 @@
+<!-- Hero head: will stick at the top -->
+<div class="hero-head">
+	<nav class="navbar is-primary">
+		<div class="navbar-brand">
+			<a class="navbar-item" ng-click="vm.goHome()">
+				TodoApp
+			</a>
+			<div class="navbar-burger burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		
+		<div class="navbar-menu" ng-switch on="isLogged">
+			<span ng-switch-when="undefined"></span>
+			<div ng-switch-default class="navbar-end">
+				<a ng-if="!isLogged" class="navbar-item" ng-click="vm.goLogin()">
+					Login
+				</a>
+				<a ng-if="!isLogged" class="navbar-item" ng-click="vm.goRegister()">
+					Register
+				</a>
+				<a ng-if="isLogged" class="navbar-item" ng-click="vm.logoutUser()">
+					<span class="icon">
+						<i class="fas fa-sign-out-alt"></i>
+					</span>
+					 Logout
+				</a>
+			</div>
+		</div>
+	</nav>
+</div>

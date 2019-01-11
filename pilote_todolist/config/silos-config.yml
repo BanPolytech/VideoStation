@@ -1,0 +1,12 @@
+silo:
+  user:
+    host: 'localhost'
+    port: 8081
+    endpoints:
+      user: 'user'
+  task:
+    host: 'localhost'
+    port: 8082
+    endpoints:
+      task: 'task'
+      list: 'list'

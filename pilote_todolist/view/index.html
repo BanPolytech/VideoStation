@@ -1,0 +1,31 @@
+<html ng-app="todoApp">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title ng-bind="'todoApp - ' + title">todoApp</title>
+	<link rel="stylesheet" href="/css/bulma.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.4/css/all.css">
+</head>
+
+<body >
+	
+	<section class="hero is-light is-fullheight">
+		<div ng-include="'template/header.html'" ng-controller="menuController as vm"></div>
+		<div class="hero-body fade" ng-view>
+		</div>
+		<!-- Hero footer: will stick at the bottom -->
+		<div class="hero-foot">
+			
+		</div>
+	</section>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js.min" type="text/javascript" charset="utf-8"></script>
+	
+	
+</body>
+
+</html>

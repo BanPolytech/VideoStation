@@ -1,0 +1,1 @@
+const todoApp = angular.module("todoApp", ["ngRoute", "ngAnimate"]);
