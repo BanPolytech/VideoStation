@@ -1,0 +1,5 @@
+# database login
+database:
+  host: 'root:ban777@ds155164.mlab.com'
+  name: 'silo-video'
+  port: 55164

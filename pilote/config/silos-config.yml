@@ -4,23 +4,16 @@ silo:
     port: 8081
     endpoints:
       user: 'user'
-  search:
+      admin: 'admin'
+  video:
     host: 'localhost'
     port: 8083
     endpoints:
       search: 'search'
+      playlists: 'playlists'
   history:
     host: 'localhost'
     port: 8084
     endpoints:
       history: 'history'
-  playlists:
-    host: 'localhost'
-    port: 8083
-    endpoints:
-      playlists: 'playlists'
-  admin:
-    host: 'localhost'
-    port: 8081
-    endpoints:
-      admin: 'admin'
+

@@ -50,8 +50,12 @@ class API {
 				});
 			}
 		});
-		
-		// history
+
+		/* ----------------- */
+		/* SILO HISTORIQUE   */
+        /* ----------------- */
+
+        // history
 		this.router.get(`/${silosConfig.history.endpoints.history}/all`, (req, res) => {
 			var that = this;
 
@@ -101,8 +105,12 @@ class API {
                 });
         });
 
-        // video
-        this.router.post(`/${silosConfig.search.endpoints.search}/add`, (req, res) => {
+        /* ----------------- */
+        /* SILO VIDEO        */
+        /* ----------------- */
+
+        // search
+        this.router.post(`/${silosConfig.video.endpoints.search}/add`, (req, res) => {
 
             var that = this;
             var v_obj = req.body.v_obj;
@@ -110,8 +118,8 @@ class API {
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.search,
-                        silosConfig.search.endpoints.search,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.search,
                         "add"
                     ),
                     {
@@ -128,15 +136,15 @@ class API {
                 });
         });
 
-        // video
-        this.router.post(`/${silosConfig.search.endpoints.search}/delete`, (req, res) => {
+        // search
+        this.router.post(`/${silosConfig.video.endpoints.search}/delete`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.search,
-                        silosConfig.search.endpoints.search,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.search,
                         "delete"
                     ),
                     {
@@ -153,7 +161,7 @@ class API {
         });
 
         // playlists
-        this.router.get(`/${silosConfig.playlists.endpoints.playlists}/all`, (req, res) => {
+        this.router.get(`/${silosConfig.video.endpoints.playlists}/all`, (req, res) => {
             var that = this;
 
             console.log("allplaylist");
@@ -161,8 +169,8 @@ class API {
             axios
                 .get(
                     that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.playlists,
                         "all"
                     ),
                     {
@@ -180,14 +188,14 @@ class API {
         });
 
         // playlists
-        this.router.get(`/${silosConfig.playlists.endpoints.playlists}/get`, (req, res) => {
+        this.router.get(`/${silosConfig.video.endpoints.playlists}/get`, (req, res) => {
             var that = this;
 
             axios
                 .get(
                     that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.playlists,
                         "get"
                     ),
                     {
@@ -206,14 +214,14 @@ class API {
         });
 
         // playlists
-        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/new`, (req, res) => {
+        this.router.post(`/${silosConfig.video.endpoints.playlists}/new`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.playlists,
                         "new"
                     ),
                     {
@@ -230,14 +238,14 @@ class API {
         });
 		
 	    // playlists
-        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/add`, (req, res) => {
+        this.router.post(`/${silosConfig.video.endpoints.playlists}/add`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.playlists,
                         "add"
                     ),
                     {
@@ -255,14 +263,14 @@ class API {
         });
 
         // playlists
-        this.router.post(`/${silosConfig.playlists.endpoints.playlists}/delete`, (req, res) => {
+        this.router.post(`/${silosConfig.video.endpoints.playlists}/delete`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.playlists,
-                        silosConfig.playlists.endpoints.playlists,
+                        silosConfig.video,
+                        silosConfig.video.endpoints.playlists,
                         "delete"
                     ),
                     {
@@ -278,15 +286,19 @@ class API {
                 });
         });
 
+        /* ----------------- */
+        /* SILO USER         */
+        /* ----------------- */
+
         // admin
-        this.router.get(`/${silosConfig.admin.endpoints.admin}/search`, (req, res) => {
+        this.router.get(`/${silosConfig.user.endpoints.admin}/search`, (req, res) => {
             var that = this;
 
             axios
                 .get(
                     that.makeFullEndpoint(
-                        silosConfig.admin,
-                        silosConfig.admin.endpoints.admin,
+                        silosConfig.user,
+                        silosConfig.user.endpoints.admin,
                         "search"
                     ),
                     {
@@ -305,14 +317,14 @@ class API {
         });
 
         // admin
-        this.router.post(`/${silosConfig.admin.endpoints.admin}/create`, (req, res) => {
+        this.router.post(`/${silosConfig.user.endpoints.admin}/create`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.admin,
-                        silosConfig.admin.endpoints.admin,
+                        silosConfig.user,
+                        silosConfig.user.endpoints.admin,
                         "create"
                     ),
                     {
@@ -332,14 +344,14 @@ class API {
         });
 
         // admin
-        this.router.post(`/${silosConfig.admin.endpoints.admin}/setadmin`, (req, res) => {
+        this.router.post(`/${silosConfig.user.endpoints.admin}/setadmin`, (req, res) => {
             var that = this;
 
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.admin,
-                        silosConfig.admin.endpoints.admin,
+                        silosConfig.user,
+                        silosConfig.user.endpoints.admin,
                         "setadmin"
                     ),
                     {
@@ -357,7 +369,7 @@ class API {
         });
 
         // admin
-        this.router.post(`/${silosConfig.admin.endpoints.admin}/disable`, (req, res) => {
+        this.router.post(`/${silosConfig.user.endpoints.admin}/disable`, (req, res) => {
             var that = this;
 
             console.log(req.body.id);
@@ -365,8 +377,8 @@ class API {
             axios
                 .post(
                     that.makeFullEndpoint(
-                        silosConfig.admin,
-                        silosConfig.admin.endpoints.admin,
+                        silosConfig.user,
+                        silosConfig.user.endpoints.admin,
                         "disable"
                     ),
                     {
@@ -384,14 +396,14 @@ class API {
         });
 
         // admin
-        this.router.post(`/${silosConfig.admin.endpoints.admin}/list`, (req, res) => {
+        this.router.get(`/${silosConfig.user.endpoints.admin}/list`, (req, res) => {
             var that = this;
 
             axios
                 .get(
                     that.makeFullEndpoint(
-                        silosConfig.admin,
-                        silosConfig.admin.endpoints.admin,
+                        silosConfig.user,
+                        silosConfig.user.endpoints.admin,
                         "list"
                     ),
                     {
@@ -411,7 +423,16 @@ class API {
 	}
 
 	makeFullEndpoint(silo, name, endpoint) {
-		const fullEndpoint = `http://${silo.host}:${silo.port}/${name}/${endpoint}`;
+        let fullEndpoint;
+        //HEROKU COND
+        if (config.serverConfig.deploy === "local") {
+            fullEndpoint = `http://${silo.host}:${silo.port}/${name}/${endpoint}`;
+        } else if (config.serverConfig.deploy === "heroku") {
+            fullEndpoint = `http://${silo.host}/${name}/${endpoint}`;
+        } else {
+            return this.makeError("unable to find deploy");
+        }
+
 		console.log(`Making endpoint: ${fullEndpoint}`);
 		return fullEndpoint;
 	}

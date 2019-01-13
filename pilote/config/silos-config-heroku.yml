@@ -1,0 +1,15 @@
+silo:
+  user:
+    host: 'videostation-silo-user.herokuapp.com'
+    endpoints:
+      user: 'user'
+      admin: 'admin'
+  video:
+    host: 'videostation-silo-video.herokuapp.com'
+    endpoints:
+      search: 'search'
+      playlists: 'playlists'
+  history:
+    host: 'videostation-silo-history.herokuapp.com'
+    endpoints:
+      history: 'history'

@@ -14,9 +14,28 @@
 
         //
         $scope.search = function search() {
-            AdminService.Search($scope.searchtext)
+            console.log($scope.searchtext);
+            if($scope.searchtext === "" || $scope.searchtext === undefined) {
+                $scope.list();
+            } else {
+                AdminService.Search($scope.searchtext)
+                    .then(response => {
+                        console.log(response);
+                        $scope.users = response.users;
+                    })
+                    .catch(error => {
+                        $scope.error = error;
+                    })
+                    .then(function() {
+                        $scope.$apply();
+                    });
+            }
+
+        };
+
+        $scope.list = function list() {
+            AdminService.List()
                 .then(response => {
-                    console.log(response);
                     $scope.users = response.users;
                 })
                 .catch(error => {
@@ -27,18 +46,7 @@
                 });
         };
 
-        $scope.list = function list() {
-            AdminService.List()
-                .then(response => {
-                    $scope.users = response;
-                })
-                .catch(error => {
-                    $scope.error = error;
-                })
-                .then(function() {
-                    $scope.$apply();
-                });
-        };
+        $scope.list();
 
         $scope.create = function create() {
             AdminService.Create($scope.mail_create, $scope.pwd_create, $scope.enabled_create, $scope.admin_create)

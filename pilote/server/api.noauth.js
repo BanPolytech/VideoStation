@@ -105,7 +105,7 @@ class APINoAuth {
 				
 			});
 
-        this.router.get(`/${silosConfig.search.endpoints.search}/search`, (req, res) => {
+        this.router.get(`/${silosConfig.video.endpoints.search}/search`, (req, res) => {
 			var that = this;
 
 			//le token n'est pas nécessaire mais utile pour historique on le vérifie donc s'il est là
@@ -133,8 +133,8 @@ class APINoAuth {
 			axios
 				.get(
 					that.makeFullEndpoint(
-						silosConfig.search,
-						silosConfig.search.endpoints.search,
+						silosConfig.video,
+						silosConfig.video.endpoints.search,
 						"search"
 					),
 					{
@@ -154,7 +154,16 @@ class APINoAuth {
 	}
 	
 	makeFullEndpoint(silo, name, endpoint) {
-		const fullEndpoint = `http://${silo.host}:${silo.port}/${name}/${endpoint}`;
+		let fullEndpoint;
+		//HEROKU COND
+		if (config.serverConfig.deploy === "local") {
+			fullEndpoint = `http://${silo.host}:${silo.port}/${name}/${endpoint}`;
+		} else if (config.serverConfig.deploy === "heroku") {
+			fullEndpoint = `http://${silo.host}/${name}/${endpoint}`;
+		} else {
+			return this.makeError("unable to find deploy in noauth");
+		}
+
 		console.log(`Making endpoint: ${fullEndpoint}`);
 		return fullEndpoint;
 	}

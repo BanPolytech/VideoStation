@@ -1,0 +1,5 @@
+# database login
+database:
+  host: 'root:ban777@ds155294.mlab.com'
+  name: 'silo-history'
+  port: 55294

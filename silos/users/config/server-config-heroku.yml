@@ -1,7 +1,6 @@
 # server information
 server:
-  host: 'localhost'
-  port: 8083
+  host: 'videostation-silo-user.herokuapp.com'
 
 crypto:
   saltRound: 10

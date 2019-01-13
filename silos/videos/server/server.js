@@ -2,13 +2,12 @@ const express = require("express");
 var bodyParser = require("body-parser");
 const apiVideo = require("./api-video");
 const apiPlaylist = require("./api-playlist");
-var cors = require('cors')
+
+const config = require(`${process.cwd()}/config/config`);
 
 class Server {
     constructor() {
         this.server = express();
-
-        this.server.use(cors());
 
         this.server.use(bodyParser.json());
         this.server.use(
@@ -22,9 +21,17 @@ class Server {
     }
 
     start(host, port) {
-        this.server.listen(port, host, () => {
-            console.log(`Listening on '${host}' on the port ${port}...`);
-        });
+        //HEROKU COND
+        if (config.serverConfig.deploy === "heroku") {
+            this.server.listen(port, () => {
+                console.log(`Listening on '${host}' on the port ${port}...`);
+            })
+        } else {
+            this.server.listen(port, host, () => {
+                console.log(`Listening on '${host}' on the port ${port}...`);
+            });
+        }
+
     }
 }
 

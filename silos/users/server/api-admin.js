@@ -181,7 +181,7 @@ class ApiAdmin {
 		});
 
 		router.get("/list", (req, res) => {
-
+			var that = this;
 
 			var database = new Database();
 			var users;
