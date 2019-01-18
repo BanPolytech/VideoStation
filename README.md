@@ -42,15 +42,15 @@ To build this project, simply clone this repository and install the dependencies
 git clone https://github.com/BanPolytech/VideoStation
 ```
 
-|     pilote    |      pilote_todolist       |      historique       |
-| :-----------: | :------------------------: | :-------------------: |
-|  `cd pilote`  | `cd pilote_todolist`       | `cd silos/historique` |
-| `npm install` |  `npm install`             |  `npm install`        |
+|     pilote    |      pilote_todolist       |
+| :-----------: | :------------------------: | 
+|  `cd pilote`  | `cd pilote_todolist`       |
+| `npm install` |  `npm install`             |
 
-|     tasks          |      users       |      videos       |
-| :----------------: | :--------------: | :---------------: |
-|  `cd silos/tasks`  | `cd silos/users` | `cd silos/videos` |
-| `npm install`      |  `npm install`   |  `npm install`    |
+|     tasks          |      users       |      videos       |      historique       |
+| :----------------: | :--------------: | :---------------: | :-------------------: |
+|  `cd silos/tasks`  | `cd silos/users` | `cd silos/videos` | `cd silos/historique` |
+| `npm install`      |  `npm install`   |  `npm install`    |  `npm install`        |
 
 #### Generate SSL certificates
 
