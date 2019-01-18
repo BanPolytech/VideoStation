@@ -125,26 +125,6 @@ The project uses YAML config files to define global settings such as: server hos
 | :--------------------------------------: | :--------------------------------------: |
 | `[pilote_name]/config/server-config.yml` `[pilote_name]/config/silos-config.yml` | `silos/[silo_name]/config/server-config.yml` `silos/[silo_name]/config/database-config.yml` |
 
-## Reflect - What could be improved
-
-### Backend
-
-- input safety (type, non-empty, etc.) improved
-- unified/centralised errors handling, allowing high fault tolerance
-- add SSL between the pilot and the silos
-- blacklist token ; use a database to store brute force data
-
-### Frontend
-
-- improve update title of the pages
-- externalize displayed strings to file(s) (localization++)
-- at loading of the app:
-  - check if the token is still valid
-  - else try to login the user (reissue a valid token)
-- gracefully handle token error while using the app (bad, expired, etc.)
-- update the name of the list/task (backend ApiPlaylist endpoint already handling it)
-- move a task from one list to another (backend ApiPlaylist endpoint already handling it)
-
 ## Author
 
 - **Esteban GOBERT** - *After work* - [estebangobert](https://github.com/BanPolytech)
