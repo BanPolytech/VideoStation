@@ -95,11 +95,11 @@ You can run the servers independently, but you need them all to use the app comp
 |  `cd silos/tasks`  | `cd silos/users` | `cd silos/videos` |
 | `node app.js`      |  `node app.js`   |  `node app.js`    |
 
-Do not forget to launch the two MongoDB servers, one for each silos:
+Do not forget to launch the MongoDB server :
 
-|         Users          |         Tasks         |
-| :--------------------: | :-------------------: |
-| ` mongod --port 12345` | `mongod --port 54321` |
+` mongod `
+
+_Note: we use the default port 27017
 
 _Note: you can specify the folder where to store the database by adding the following option: `--dbpath /path/to/folder`_.
 
@@ -121,15 +121,6 @@ The project uses YAML config files to define global settings such as: server hos
 |                  Pilot                   |                  Silo                   |
 | :--------------------------------------: | :--------------------------------------: |
 | `[pilote_name]/config/server-config.yml` `[pilote_name]/config/silos-config.yml` | `silos/[silo_name]/config/server-config.yml` `silos/[silo_name]/config/database-config.yml` |
-
-## Developer
-
-To help you test the backend ApiPlaylist, I provide:
-
-- a Postman collection, containing all the endpoints of the APIs
-- a Postman environment (token, ApiPlaylist host, ApiPlaylist port, etc.)
-
-The folder `developer` contains these files.
 
 ## Reflect - What could be improved
 
