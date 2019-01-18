@@ -14,10 +14,12 @@ VideoStation is an application allowing to search videos on YouTube and Vimeo, c
 | :----------------: | :----------------: | :----------------: |
 | ![Screen3](s3.png) | ![Screen4](s4.png) | ![Screen5](s5.png) |
 
-The project contains 6 web servers, 2 pilots and 5 silos.
+The project contains 6 web servers, 2 pilots and 4 silos.
 
 One pilot containing the video application, distributing requests to different silos. 
 And another one for the bonus application "todoApp" that we made already, using the silo "user" of the video application, and another personal silo.
+
+The silos of the video application are "historique", "users", "videos", and the particular silo for todoApp is "tasks".
 
 The backend is developed with [nodeJS](http://nodejs.org/), the frontend with [AngularJS](https://angularjs.org/).
 
@@ -35,13 +37,18 @@ To run this project, you will need :
 To build this project, simply clone this repository and install the dependencies of the three servers:
 
 ```shell
-git clone https://github.com/gaelfoppolo/todoApp
+git clone https://github.com/BanPolytech/VideoStation
 ```
 
-|     Pilot     |      Users       |      Tasks       |
-| :-----------: | :--------------: | :--------------: |
-|  `cd pilote`  | `cd silos/users` | `cd silos/tasks` |
-| `npm install` |  `npm install`   |  `npm install`   |
+|     pilote    |      pilote_todolist       |      historique       |
+| :-----------: | :------------------------: | :-------------------: |
+|  `cd pilote`  | `cd pilote_todolist`       | `cd silos/historique` |
+| `npm install` |  `npm install`             |  `npm install`        |
+
+|     tasks          |      users       |      videos       |
+| :----------------: | :--------------: | :---------------: |
+|  `cd silos/tasks`  | `cd silos/users` | `cd silos/videos` |
+| `npm install`      |  `npm install`   |  `npm install`    |
 
 #### Generate SSL certificates
 
