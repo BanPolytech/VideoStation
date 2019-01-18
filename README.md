@@ -145,7 +145,8 @@ The project uses YAML config files to define global settings such as: server hos
 
 ## Author
 
-- **Gaël Foppolo** - *Initial work* - [gaelfoppolo](https://github.com/gaelfoppolo)
+- **Esteban GOBERT** - *After work* - [estebangobert](https://github.com/BanPolytech)
+- **Cédric JAUBERT** - *After work* - [cedricjaubert](https://github.com/jayceeeeeee)
 
 ## License
 
