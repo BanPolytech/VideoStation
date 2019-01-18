@@ -6,9 +6,9 @@
 
 todoApp was a school project meant to teach us security and scalability of today Web apps.
 
-|            Login            |            Home             |            Tasks            |
-| :-------------------------: | :-------------------------: | :-------------------------: |
-| ![Screen0](screenshot0.png) | ![Screen1](screenshot1.png) | ![Screen2](screenshot2.png) |
+|       Home         |       Login        |       Register     |       Hitory       |       Playlists    |       Admin         |
+| :----------------: | :----------------: | :----------------: | :----------------: | :----------------: | :----------------: |
+| ![Screen0](s0.png) | ![Screen1](s1.png) | ![Screen2](s2.png) | ![Screen3](s3.png) | ![Screen4](s4.png) | ![Screen5](s5.png) |
 
 The project offers 3 web servers, a pilot and two silos.
 
