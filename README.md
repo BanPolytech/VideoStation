@@ -85,10 +85,15 @@ You can now copy the private key (`server_private_clear.key`) and the self-signe
 
 You can run the servers independently, but you need them all to use the app completely:
 
-|     Pilot     |      Users       |      Tasks       |
-| :-----------: | :--------------: | :--------------: |
-|  `cd pilote`  | `cd silos/users` | `cd silos/tasks` |
-| `node app.js` |  `node app.js`   |  `node app.js`   |
+|     pilote    |      pilote_todolist       |      historique       |
+| :-----------: | :------------------------: | :-------------------: |
+|  `cd pilote`  | `cd pilote_todolist`       | `cd silos/historique` |
+| `node app.js` |  `node app.js`             |  `node app.js`        |
+
+|     tasks          |      users       |      videos       |
+| :----------------: | :--------------: | :---------------: |
+|  `cd silos/tasks`  | `cd silos/users` | `cd silos/videos` |
+| `node app.js`      |  `node app.js`   |  `node app.js`    |
 
 Do not forget to launch the two MongoDB servers, one for each silos:
 
@@ -104,17 +109,18 @@ Using the default settings, simply browse to https://localhost:8080. You can:
 
 - login
 - register
-- create/remove list of tasks
-- create/remove tasks
-- update the status of task (todo/done)
+- search videos
+- add/delete videos to playlists
+- create playlists
+- see history
 
 ## Customization
 
 The project uses YAML config files to define global settings such as: server host, server port, ApiPlaylist endpoints, etc. You can edit them as you like.
 
-|                  Pilot                   |                  Users                   |                  Tasks                   |
-| :--------------------------------------: | :--------------------------------------: | :--------------------------------------: |
-| `pilote/config/server-config.yml` `pilote/config/silos-config.yml` | `silos/users/config/server-config.yml` `silos/users/config/database-config.yml` | `silos/tasks/config/server-config.yml` `silos/tasks/config/database-config.yml` |
+|                  Pilot                   |                  Silo                   |
+| :--------------------------------------: | :--------------------------------------: |
+| `[pilote_name]/config/server-config.yml` `[pilote_name]/config/silos-config.yml` | `silos/[silo_name]/config/server-config.yml` `silos/[silo_name]/config/database-config.yml` |
 
 ## Developer
 
