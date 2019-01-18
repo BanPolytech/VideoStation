@@ -99,7 +99,7 @@ Do not forget to launch the MongoDB server :
 
 ` mongod `
 
-_Note: we use the default port 27017 _.
+_Note: we use the default port 27017_
 
 _Note: you can specify the folder where to store the database by adding the following option: `--dbpath /path/to/folder`_.
 
