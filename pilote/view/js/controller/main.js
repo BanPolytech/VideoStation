@@ -3,9 +3,9 @@
 	
 	todoApp.controller("videosHomeCtrl", videosHomeCtrl);
 	
-	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce", "PlaylistService", "UserFactory"];
+	videosHomeCtrl.$inject = ["$scope", "MainService", "$location", "HistoryService", "$sce", "PlaylistService", "UserFactory", "blockUI"];
 	
-	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce, PlaylistService, UserFactory) {
+	function videosHomeCtrl($scope, MainService, $location, HistoryService, $sce, PlaylistService, UserFactory, blockUI) {
 		const vm = this;
 		
 		$scope.videos = null;
@@ -62,9 +62,17 @@
         };
 		
 		if($location.path().startsWith("/search/")){
+
+			// Block the user interface
+			blockUI.start();
+
 			$scope.searchtext = $location.path().substring(8, $location.path().length);
 			MainService.Search($scope.searchtext)
 			.then(response => {
+
+				// Unblock the user interface
+				blockUI.stop();
+
 				console.log(response);
 
 				//FORMAT VIMEO VIDEO OBJ

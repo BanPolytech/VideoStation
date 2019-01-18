@@ -58,7 +58,7 @@ class Server {
 			);
 		});
 		
-		// authorize access to public directory to server html, css, js, imgs
+		// authorize access to public directory to server html, css, js, imgs, block-ui
 		this.server.use(
 			"/js",
 			express.static(
@@ -81,9 +81,14 @@ class Server {
 			"/template",
 			express.static(
 				path.join(
-					process.cwd(),
-					`${config.serverConfig.server.public.template}`
+					process.cwd(), `${config.serverConfig.server.public.template}`
 				)
+			)
+		);
+		this.server.use(
+			"/block-ui",
+			express.static(
+				path.join(process.cwd(), `${config.serverConfig.server.public.blockUi}`)
 			)
 		);
 		
@@ -117,8 +122,6 @@ class Server {
 			key: fs.readFileSync(config.serverConfig.server.security.ssl.key),
 			cert: fs.readFileSync(config.serverConfig.server.security.ssl.cert)
 		};
-
-		console.log(config.serverConfig);
 
 		//HEROKU COND
 		 if (config.serverConfig.deploy === "heroku") {
