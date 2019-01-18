@@ -4,7 +4,7 @@
 
 
 
-todoApp was a school project meant to teach us security and scalability of today Web apps.
+VideoStation is an application allowing to search videos on YouTube and Vimeo, creating playlists and visualize history of your research.
 
 |       Home         |       Login        |       Register     |
 | :----------------: | :----------------: | :----------------: |
@@ -14,11 +14,12 @@ todoApp was a school project meant to teach us security and scalability of today
 | :----------------: | :----------------: | :----------------: |
 | ![Screen3](s3.png) | ![Screen4](s4.png) | ![Screen5](s5.png) |
 
-The project offers 3 web servers, a pilot and two silos.
+The project contains 6 web servers, 2 pilots and 5 silos.
 
-The pilot is the main server serving the web interface, handling requests and distributing them to the silos.
+One pilot containing the video application, distributing requests to different silos. 
+And another one for the bonus application "todoApp" that we made already, using the silo "user" of the video application, and another personal silo.
 
-The backend is developed with [nodeJS](http://nodejs.org/), the frontend with [AngularJS](https://angularjs.org/) and [Bulma](bulma.io).
+The backend is developed with [nodeJS](http://nodejs.org/), the frontend with [AngularJS](https://angularjs.org/).
 
 ## Getting Started
 
