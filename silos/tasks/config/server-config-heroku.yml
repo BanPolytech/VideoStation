@@ -1,0 +1,6 @@
+# server information
+server:
+  host: 'videostation-silo-task.herokuapp.com'
+
+crypto:
+  saltRound: 10

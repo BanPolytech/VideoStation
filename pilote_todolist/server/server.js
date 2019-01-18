@@ -105,16 +105,24 @@ class Server {
 			authentificatedAPI.router
 		);
 	}
-	
+
 	start(host, port) {
 		const options = {
 			key: fs.readFileSync(config.serverConfig.server.security.ssl.key),
 			cert: fs.readFileSync(config.serverConfig.server.security.ssl.cert)
 		};
-		
-		https.createServer(options, this.server).listen(port, host, () => {
-			console.log(`Listening on '${host}' on the port ${port}...`);
-		});
+
+		//HEROKU COND
+		if (config.serverConfig.deploy === "heroku") {
+			this.server.listen(port, () => {
+				console.log(`Listening on '${host}' on the port ${port}...`);
+			});
+		} else {
+			https.createServer(options, this.server).listen(port, host, () => {
+				console.log(`Listening on '${host}' on the port ${port}...`);
+			});
+		}
+
 	}
 	
 	failCallback(req, res, next, nextValidRequestDate) {

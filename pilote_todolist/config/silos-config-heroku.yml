@@ -1,0 +1,10 @@
+silo:
+  user:
+    host: 'videostation-silo-user.herokuapp.com'
+    endpoints:
+      user: 'user'
+  task:
+    host: 'videostation-silo-task.herokuapp.com'
+    endpoints:
+      task: 'task'
+      list: 'list'

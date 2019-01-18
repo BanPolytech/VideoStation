@@ -1,0 +1,5 @@
+# database login
+database:
+  host: 'root:este777@ds161024.mlab.com'
+  name: 'silo-task'
+  port: 61024
