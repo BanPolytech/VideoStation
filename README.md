@@ -10,7 +10,7 @@ VideoStation is an application allowing to search videos on YouTube and Vimeo, c
 | :----------------: | :----------------: | :----------------: |
 | ![Screen0](s0.png) | ![Screen1](s1.png) | ![Screen2](s2.png) |
 
-|       Hitory       |       Playlists    |       Admin        |
+|       History       |       Playlists    |       Admin        |
 | :----------------: | :----------------: | :----------------: |
 | ![Screen3](s3.png) | ![Screen4](s4.png) | ![Screen5](s5.png) |
 
