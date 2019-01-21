@@ -26,6 +26,7 @@ The backend is developed with [nodeJS](http://nodejs.org/), the frontend with [A
 ## Getting Started
 
 You can have a preview of the app here : [herokuVideoStation](https://videostation-pilote.herokuapp.com/?fbclid=IwAR1hsPYvGgyYb6BWP-cLP3-zolXrIEVB-NMFv8ejwx-835wPoqgTV_fCRJU#!/).
+There is also a Todo App here : [herokuTodoApp](https://videostation-pilote-todo.herokuapp.com).
 
 ### Prerequisites
 
